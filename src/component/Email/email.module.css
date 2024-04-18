@@ -46,7 +46,6 @@ div > .text {
 
 .button > Button {
   text-transform: capitalize;
-  border-radius: 4.1px;
   padding: 1rem 6rem;
   margin-bottom: 2rem;
 }

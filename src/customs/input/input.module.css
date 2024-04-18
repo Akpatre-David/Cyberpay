@@ -4,16 +4,15 @@
   flex-direction: column;
 }
 
-.details > label {
+
+.details > label{
   font-weight: 500;
-  size: 16px;
-  line-height: 19px;
+  font-size: 16px;
 }
 
-.details > input {
+input {
   width: 360px;
   height: 56px;
- 
 }
 
 input::placeholder {

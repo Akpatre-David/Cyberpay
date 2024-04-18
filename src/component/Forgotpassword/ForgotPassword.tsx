@@ -34,7 +34,7 @@ const ForgotPassword = () => {
                     />
 
                     <div className={style.button}>
-                      <Button text="send reset link" onClick={() => {}} />
+                      <Button text="send reset link" type="submit" onClick={() => {}} />
                     </div>
 
                     <span className={style.signup}>Don't have an account? </span>

@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logocontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 76px;
+  width: 76px;
+  background-color: #eaf2f9;
+  border-radius: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.header {
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.icon {
+  color: #2f8ed6;
+}

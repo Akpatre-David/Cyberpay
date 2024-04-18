@@ -22,7 +22,7 @@ const Email = () => {
             </p>
 
             <div className={style.button}>
-              <Button text="Resend Mail" onClick={() => {}} />
+              <Button text="Resend Mail" type="submit" onClick={() => {}} />
             </div>
           </div>
         </div>

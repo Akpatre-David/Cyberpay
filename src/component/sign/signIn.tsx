@@ -4,11 +4,8 @@ import style from "./signin.module.css";
 import { Formik } from "formik";
 import { Form, Link, useNavigate } from "react-router-dom";
 import { Input } from "../../customs";
-import * as Yup from "yup";
 import Button from "../../customs/button/button";
 import { SigninValidation } from "../../Validation/Signin";
-
-
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -23,7 +20,7 @@ const SignIn = () => {
       <Card>
         <div className={style.writeup}>
           <p>welcome back</p>
-          <p>sign in to your account</p>
+          <p>Sign in to your account</p>
 
           <div className={style.design}>
             <Formik
@@ -51,14 +48,15 @@ const SignIn = () => {
                       name="password"
                       type="password"
                     />
-                   
 
                     <div className={style.button}>
-                      <Button text="Sign In" onClick={() => {}} />
+                      <Button text="Sign In" type="submit" onClick={() => {}} />
                     </div>
 
                     <span className={style.signup}>Dont have an account? </span>
-                    <Link to="" className={style.link}>Sign Up</Link>
+                    <Link to="" className={style.link}>
+                      Sign Up
+                    </Link>
                   </Form>
                 );
               }}

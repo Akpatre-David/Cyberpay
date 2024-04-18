@@ -1,8 +1,10 @@
 import path from "path";
 import React from "react";
 import SignIn from "./component/sign/signIn";
-import ForgotPAssword from "./component/Forgotpassword/ForgotPassword";
+import ForgotPassword from "./component/Forgotpassword/ForgotPassword";
 import Email from "./component/Email/email";
+import ResetPassword from "./component/Resetpassword/ResetPassword";
+import AcctivateAccount from "./component/ActivateAccount/ActivateAccount";
 
 export const routes = [
   {
@@ -11,12 +13,22 @@ export const routes = [
   },
 
   {
-    path: "/Forgot-Password",
-    element: <ForgotPAssword />,
+    path: "/forgot-password",
+    element: <ForgotPassword />,
   },
 
   {
     path: "/Email",
     element: <Email />,
+  },
+
+  {
+    path: "/reset-password",
+    element: <ResetPassword />,
+  },
+
+  {
+    path: "activate-account",
+    element: <AcctivateAccount />,
   },
 ];
