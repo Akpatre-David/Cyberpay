@@ -8,22 +8,20 @@ const Email = () => {
   return (
     <section className={style.container}>
       <Card>
+        <div className={style.envelop}>
+          <FaEnvelopeOpen size={28} className={style.envo} />
+        </div>
+
         <div>
-          <div className={style.envelop}>
-            <FaEnvelopeOpen size={28} className={style.envo} />
-          </div>
+          <p className={style.check}>check your email</p>
 
-          <div>
-            <p className={style.check}>check your email</p>
+          <p className={style.text}>
+            Click on the link sent to your email <br />
+            and reset password
+          </p>
 
-            <p className={style.text}>
-              Click on the link sent to your email <br />
-              and reset password
-            </p>
-
-            <div className={style.button}>
-              <Button text="Resend Mail" type="submit" onClick={() => {}} />
-            </div>
+          <div className={style.button}>
+            <Button text="Resend Mail" type="submit" onClick={() => {}} />
           </div>
         </div>
       </Card>

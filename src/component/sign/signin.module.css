@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.writeup > p:nth-child(1) {
+.header > p:nth-child(1) {
   font-weight: 700;
   font-size: 20px;
   margin-bottom: 1rem;
@@ -12,7 +12,7 @@
   color: #4a4a4a;
 }
 
-.writeup > p:nth-child(2) {
+.header > p:nth-child(2) {
   font-weight: 400;
   font-size: 18px;
   margin-bottom: 2rem;

@@ -13,7 +13,7 @@ const ForgotPassword = () => {
         <div className={style.header}>
           <p>reset password</p>
           <p>enter email linked to your account</p>
-
+</div>
           <div>
             <Formik
               initialValues={{
@@ -46,7 +46,7 @@ const ForgotPassword = () => {
               }}
             </Formik>
           </div>
-        </div>
+       
       </Card>
     </section>
   );

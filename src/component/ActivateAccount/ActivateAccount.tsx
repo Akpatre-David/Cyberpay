@@ -10,30 +10,29 @@ const AcctivateAccount = () => {
   return (
     <section className={style.container}>
       <Card>
-        <div>
-          <div className={style.logocontainer}>
-            <PiIdentificationCard size={33} className={style.icon} />
-          </div>
+        
+        <div className={style.logocontainer}>
+          <PiIdentificationCard size={33} className={style.icon} />
+        </div>
 
-          <div className={style.header}>
-            <p>Verify email</p>
-          </div>
+        <div className={style.header}>
+          <p>Verify email</p>
+        </div>
 
-          <div className={style.text}>
+        <div className={style.text}>
+          <p>
             <p>
-              <p>
-                click on the email sent to
-                <br />
-                {"email"}
-                <br />
-                to verify Email.
-              </p>
+              click on the email sent to
+              <br />
+              {"email"}
+              <br />
+              to verify Email.
             </p>
-          </div>
+          </p>
+        </div>
 
-          <div className={style.button}>
-            <Button type="submit" text="Resend Link" onClick={() => {}} />
-          </div>
+        <div className={style.button}>
+          <Button type="submit" text="Resend Link" onClick={() => {}} />
         </div>
       </Card>
     </section>

@@ -18,50 +18,50 @@ const SignIn = () => {
   return (
     <section className={style.container}>
       <Card>
-        <div className={style.writeup}>
+        <div className={style.header}>
           <p>welcome back</p>
           <p>Sign in to your account</p>
+        </div>
 
-          <div className={style.design}>
-            <Formik
-              initialValues={{
-                email: "",
-                password: "",
-              }}
-              validationSchema={SigninValidation}
-              onSubmit={(values) => {
-                console.log(values);
-              }}>
-              {(props) => {
-                return (
-                  <Form>
-                    <Input
-                      type="email"
-                      label="Email"
-                      placeholder="Enter Email"
-                      name="email"
-                    />
+        <div className={style.design}>
+          <Formik
+            initialValues={{
+              email: "",
+              password: "",
+            }}
+            validationSchema={SigninValidation}
+            onSubmit={(values) => {
+              console.log(values);
+            }}>
+            {(props) => {
+              return (
+                <Form>
+                  <Input
+                    type="email"
+                    label="Email"
+                    placeholder="Enter Email"
+                    name="email"
+                  />
 
-                    <Input
-                      label="Password"
-                      placeholder="Enter Password"
-                      name="password"
-                      type="password"
-                    />
+                  <Input
+                    label="Password"
+                    placeholder="Enter Password"
+                    name="password"
+                    type="password"
+                  />
 
-                    <div className={style.button}>
-                      <Button text="Sign In" type="submit" onClick={() => {}} />
-                    </div>
+                  <div className={style.button}>
+                    <Button text="Sign In" type="submit" onClick={() => {}} />
+                  </div>
 
-                    <span className={style.signup}>Dont have an account? </span>
-                    <Link to="" className={style.link}>
-                      Sign Up
-                    </Link>
-                  </Form>
-                );
-              }}
-            </Formik>
-          </div>
+                  <span className={style.signup}>Dont have an account? </span>
+                  <Link to="" className={style.link}>
+                    Sign Up
+                  </Link>
+                </Form>
+              );
+            }}
+          </Formik>
         </div>
       </Card>
     </section>

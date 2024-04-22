@@ -11,25 +11,24 @@ const ActivateSuccess = () => {
   return (
     <section className={style.container}>
       <Card>
+        <div className={style.logocontainer}>
+          <RiVerifiedBadgeFill size={28} className={style.verified} />
+        </div>
+        
         <div>
-          <div className={style.logocontainer}>
-            <RiVerifiedBadgeFill size={28} className={style.verified} />
-          </div>
-          <div>
-            <p>Email verified</p>
-            <p>
-              your email is verifed <br />
-              successfully click below to login
-            </p>
-          </div>
+          <p>Email verified</p>
+          <p>
+            Your email is verifed <br />
+            successfully click below to login
+          </p>
+        </div>
 
-          <div>
-            <Button
-              text="Login"
-              type="submit"
-              onClick={() => Navigate("/sign-in")}
-            />
-          </div>
+        <div className={style.button}>
+          <Button
+            text="Login"
+            type="submit"
+            onClick={() => Navigate("/sign-in")}
+          />
         </div>
       </Card>
     </section>
