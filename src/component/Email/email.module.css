@@ -8,13 +8,12 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem ;
+  margin-bottom: 2.5rem;
   background-color: #eaf2f9;
   height: 76px;
   width: 76px;
   border-radius: 13px;
-  margin-left: 6rem;
-  
+  margin-left: 9rem;
 }
 
 .envo {
@@ -33,7 +32,8 @@ div > .check {
 }
 
 div > .text {
-  font-size: 16px;
+  margin-bottom: 3rem;
+  font-size: 1.6rem;
   font-weight: 400;
   text-align: center;
   color: #4a4a4a;
@@ -46,6 +46,6 @@ div > .text {
 
 .button > Button {
   text-transform: capitalize;
-  padding: 1rem 6rem;
+  padding: 1rem 8rem;
   margin-bottom: 2rem;
 }

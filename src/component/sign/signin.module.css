@@ -7,7 +7,7 @@
 .writeup > p:nth-child(1) {
   font-weight: 700;
   font-size: 20px;
-  padding-bottom: 0.1rem;
+  margin-bottom: 1rem;
   text-transform: capitalize;
   color: #4a4a4a;
 }
@@ -15,23 +15,35 @@
 .writeup > p:nth-child(2) {
   font-weight: 400;
   font-size: 18px;
+  margin-bottom: 2rem;
 }
 
 .button {
   display: flex;
   justify-content: center;
-  border-radius: 4.1px;
   margin-bottom: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.button > Button {
+  width: 218.62px;
+  height: 54.65px;
+  border-radius: 0.41rem;
 }
 
 .signup {
   font-weight: 400;
   font-size: 14px;
+  margin-bottom: 20rem;
 }
 
 .link {
   text-decoration: none;
   color: #2f8ed6;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+Input {
+  margin-bottom: 1rem;
 }

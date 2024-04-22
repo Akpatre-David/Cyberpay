@@ -12,7 +12,7 @@ const ResetPassword = () => {
       <Card>
         <div className={style.info}>
           <p>create new password</p>
-          <p>set a password different from the old one</p>
+          <p>Set a password different from the old one</p>
 
           <div>
             <Formik

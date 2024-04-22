@@ -5,6 +5,7 @@
 }
 
 .logocontainer {
+  margin-left: 9rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,8 +20,29 @@
   font-weight: 700;
   font-size: 2rem;
   text-align: center;
+  text-align: center;
+  color: #4a4a4a;
 }
 
 .icon {
   color: #2f8ed6;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button > button {
+  text-align: center;
+  border-radius: 4.1px;
+  padding: 1rem 8rem;
+  font-size: 16px;
 }

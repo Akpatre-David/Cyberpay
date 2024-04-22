@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logocontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaf2f9;
+  width: 76px;
+  height: 76px;
+  border-radius: 1.3rem;
+  margin-left: 4rem;
+  margin-bottom: 3rem;
+}
+
+.verified {
+  color: #2f8ed6;
+}
+
+.container div > p:nth-of-type(1) {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #4a4a4a;
+  margin-bottom: 2rem;
+  font-family: Poppins;
+}
+
+.container div > p:nth-of-type(2) {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #4a4a4a;
+}

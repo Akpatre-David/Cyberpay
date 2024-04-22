@@ -2,8 +2,18 @@
   font-size: 62.5%;
 }
 
+@font-face {
+  font-family: "BRFirma-Medium";
+  src: url(../public/FontsFree-Net-BRFirma-Medium.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body,
 html {
+  font-size: 62.5%;
+  font-family: "BRFirma-Medium", sans-serif !important;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
