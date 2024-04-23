@@ -16,10 +16,15 @@ input {
   width: 360px;
   height: 56px;
   font-family: "BRFirma-Medium", sans-serif !important;
+  border: 1px solid #dadada;
 }
 
 input::placeholder {
- 
   font-weight: 400;
   font-size: 1.4rem;
+  color: #9f9f9f;
+}
+
+input:focus {
+  border: 1px solid #2f8ed6;
 }

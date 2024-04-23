@@ -10,7 +10,6 @@ const ResetPassword = () => {
   return (
     <section className={style.container}>
       <Card>
-        
         <div className={style.header}>
           <p>create new password</p>
           <p>Set a password different from the old one</p>

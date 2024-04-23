@@ -14,7 +14,7 @@ const ActivateSuccess = () => {
         <div className={style.logocontainer}>
           <RiVerifiedBadgeFill size={28} className={style.verified} />
         </div>
-        
+
         <div>
           <p>Email verified</p>
           <p>
@@ -27,7 +27,7 @@ const ActivateSuccess = () => {
           <Button
             text="Login"
             type="submit"
-            onClick={() => Navigate("/sign-in")}
+            onClick={() => Navigate("/Log-in")}
           />
         </div>
       </Card>

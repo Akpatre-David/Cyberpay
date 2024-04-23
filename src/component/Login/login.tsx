@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Card from "../../customs/card/card";
-import style from "./signin.module.css";
+import style from "./login.module.css";
 import { Formik } from "formik";
 import { Form, Link, useNavigate } from "react-router-dom";
 import { Input } from "../../customs";
 import Button from "../../customs/button/button";
 import { SigninValidation } from "../../Validation/Signin";
 
-const SignIn = () => {
+const Login = () => {
   const navigate = useNavigate();
   // const [remember, setremember] = useState(false);
 
@@ -68,4 +68,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default Login;

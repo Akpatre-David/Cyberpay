@@ -1,0 +1,96 @@
+.container {
+  display: flex;
+}
+
+.details > p {
+  font-weight: 600;
+  font-size: 24px;
+  color: #4a4a4a;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+  color: #4a4a4a;
+}
+
+.place {
+  display: flex;
+  gap: 2rem;
+}
+
+.container > .details {
+  width: 60%;
+  padding: 4rem;
+}
+
+.container > .futures {
+  background-color: #fbfbfb;
+  padding-top: 2;
+  width: 40%;
+  height: 100vh;
+}
+
+.button > Button {
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 4.1px;
+  padding: 2rem 11rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.end > span {
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: #4a4a4a;
+  margin-bottom: 3rem;
+}
+
+.link {
+  text-decoration: none;
+  color: #2f8ed6;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.futures {
+  padding: 20px;
+}
+
+.futures > p {
+  padding-bottom: 2rem;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.listing {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+}
+
+.listing > span {
+  margin-left: 1rem;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #4a4a4a;
+}
+
+.circle {
+  display: flex;
+  color: #2c83c5;
+}
+
+.endofutures {
+  margin-left: 2rem;
+  margin-top: 20rem;
+}
+
+.endofutures > span {
+  font-weight: 400;
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+.link{
+  text-decoration: none;
+}
+
