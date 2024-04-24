@@ -1,11 +1,11 @@
 import React from "react";
 import style from "./signup.module.css";
 import { Form, Formik } from "formik";
-import { SigninValidation } from "../../Validation/Signin";
 import { Input } from "../../customs";
 import Button from "../../customs/button/button";
 import { Link } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
+import { SignupValidation } from "../../Validation/signup";
 
 const Signup = () => {
   return (
@@ -15,8 +15,11 @@ const Signup = () => {
 
         <div>
           <Formik
-            initialValues={{}}
-            validationSchema={SigninValidation}
+            initialValues={{
+              BusinessName: "",
+              BusinessType: "",
+            }}
+            validationSchema={SignupValidation}
             onSubmit={(values) => {
               console.log(values);
             }}>
@@ -28,13 +31,13 @@ const Signup = () => {
                       type="text"
                       label="Business Name"
                       placeholder="Business Name"
-                      name="businessname"
+                      name="BusinessName"
                     />
                     <Input
                       type="text"
                       label="Business Type"
                       placeholder="Business Type"
-                      name="businesstype"
+                      name="BusinessType"
                     />
                   </div>
 
@@ -42,7 +45,7 @@ const Signup = () => {
                     <Input
                       type="text"
                       label="Phone Number"
-                      name="phone"
+                      name="Phone"
                       placeholder="Phone Number"
                     />
 
@@ -74,7 +77,7 @@ const Signup = () => {
                     type="text"
                     label="Country"
                     placeholder="Input Country"
-                    name="Country"
+                    name="country"
                   />
 
                   <div className={style.button}>
@@ -88,8 +91,8 @@ const Signup = () => {
                   <div className={style.end}>
                     <span>Have an account?</span>
 
-                    <Link to="" className={style.link}>
-                      SignUp
+                    <Link to="/Log-in" className={style.link}>
+                      Sign In
                     </Link>
                   </div>
                 </Form>
@@ -116,7 +119,7 @@ const Signup = () => {
           <FaCheckCircle size={25} className={style.circle} />
 
           <span>
-            Use sample data to try out our APIs in our <br /> snadbox
+            Use sample data to try out our APIs in our <br /> sandbox
             environment.
           </span>
         </div>
@@ -125,13 +128,16 @@ const Signup = () => {
           <FaCheckCircle size={25} className={style.circle} />
 
           <span>
-           Use information from up to 1000 free API calls <br /> when you asre redy to start building.
+            Use information from up to 1000 free API calls <br /> when you are
+            ready to start building.
           </span>
         </div>
 
-      <div  className={style.endofutures}>
+        <div className={style.endofutures}>
           <span>Got Question?</span>
-          <Link to="" className={style.link}>Contact Sales</Link>
+          <Link to="" className={style.link}>
+            Contact Sales
+          </Link>
         </div>
       </section>
     </section>

@@ -5,7 +5,7 @@ import { Formik } from "formik";
 import { Form, Link, useNavigate } from "react-router-dom";
 import { Input } from "../../customs";
 import Button from "../../customs/button/button";
-import { SigninValidation } from "../../Validation/Signin";
+import { LoginValidation } from "../../Validation/Login";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const Login = () => {
               email: "",
               password: "",
             }}
-            validationSchema={SigninValidation}
+            validationSchema={LoginValidation}
             onSubmit={(values) => {
               console.log(values);
             }}>
@@ -55,7 +55,7 @@ const Login = () => {
                   </div>
 
                   <span className={style.signup}>Dont have an account? </span>
-                  <Link to="" className={style.link}>
+                  <Link to="/Log-in" className={style.link}>
                     Sign Up
                   </Link>
                 </Form>

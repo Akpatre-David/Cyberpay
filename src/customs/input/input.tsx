@@ -34,7 +34,7 @@ const Input: FC<InputProps> = ({
             onChange={onChange}
             disabled={disable}
           />
-          {meta.touched && meta.error && <div>{meta.error}</div>}
+          {meta.touched && meta.error && <div className={style.error}>{meta.error}</div>}
         </div>
       )}
     </Field>

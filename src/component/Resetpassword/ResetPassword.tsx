@@ -55,7 +55,7 @@ const ResetPassword = () => {
                   </div>
 
                   <span className={style.signup}>Don't have an account? </span>
-                  <Link to="" className={style.link}>
+                  <Link to="/sign-up" className={style.link}>
                     Sign Up
                   </Link>
                 </Form>

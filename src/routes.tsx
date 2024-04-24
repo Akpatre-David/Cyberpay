@@ -42,6 +42,6 @@ export const routes = [
 
   {
     path: "sign-up",
-    element: <Signup />
-  }
+    element: <Signup />,
+  },
 ];
