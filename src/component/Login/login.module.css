@@ -1,3 +1,10 @@
+.cyberpaylogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4rem;
+}
+
 .container {
   display: flex;
   justify-content: center;

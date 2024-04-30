@@ -5,53 +5,68 @@ import { Form, Formik } from "formik";
 import { ForgotpasswordValidation } from "../../Validation/ForgotPassword";
 import Button from "../../customs/button/button";
 import { Link } from "react-router-dom";
+import { ReactComponent as Logo} from "../../assets/logo.svg"
 
 const ForgotPassword = () => {
   return (
-    <section className={style.container}>
-      <Card>
-        <div className={style.header}>
-          <p>reset password</p>
-          <p>enter email linked to your account</p>
-        </div>
-        <div>
-          <Formik
-            initialValues={{
-              email: "",
-            }}
-            validationSchema={ForgotpasswordValidation}
-            onSubmit={(values) => {
-              console.log(values);
-            }}>
-            {(props) => {
-              return (
-                <Form>
-                  <Input
-                    type="email"
-                    name="email"
-                    label="Email"
-                    placeholder="Email"
-                  />
+    <>
+      
+      <div className={style.cyberpaylogo}>
 
-                  <div className={style.button}>
-                    <Button
-                      text="send reset link"
-                      type="submit"
-                      onClick={() => {}}
+<Logo />
+
+
+      </div>
+
+      <section className={style.container}>
+        <Card>
+          <div className={style.header}>
+            <p>reset password</p>
+            <p>enter email linked to your account</p>
+          </div>
+          <div>
+            <Formik
+              initialValues={{
+                email: "",
+              }}
+              validationSchema={ForgotpasswordValidation}
+              onSubmit={(values) => {
+                console.log(values);
+              }}>
+              {(props) => {
+                return (
+                  <Form>
+                    <Input
+                      type="email"
+                      name="email"
+                      label="Email"
+                      placeholder="Email"
                     />
-                  </div>
 
-                  <span className={style.signup}>Don't have an account? </span>
-                  <Link to="/sign-up" className={style.link}>
-                    Sign Up
-                  </Link>
-                </Form>
-              );
-            }}
-          </Formik>
-        </div>
-      </Card>
-    </section>
+                    <div className={style.button}>
+                      <Button
+                        text="send reset link"
+                        type="submit"
+                        onClick={() => {}}
+                      />
+                    </div>
+
+                    <div className={style.last}>
+                      <span className={style.signup}>
+                        Don't have an account?
+                      </span>
+                      <Link to="/sign-up" className={style.link}>
+                        Sign Up
+                      </Link>
+                    </div>
+                  </Form>
+                );
+              }}
+            </Formik>
+          </div>
+        </Card>
+      </section>
+    </>
   );
 };
 
