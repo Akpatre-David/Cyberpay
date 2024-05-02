@@ -5,37 +5,44 @@ import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import { PiIdentificationCard } from "react-icons/pi";
 import Email from "../Email/email";
 import Button from "../../customs/button/button";
+import {ReactComponent as Logo} from "../../assets/logo.svg"
 
 const AcctivateAccount = () => {
   return (
-    <section className={style.container}>
-      <Card>
-        
-        <div className={style.logocontainer}>
-          <PiIdentificationCard size={33} className={style.icon} />
-        </div>
+    <>
+      
 
-        <div className={style.header}>
-          <p>Verify email</p>
+      <div className={style.cyberpaylogo}>
+        <Logo />
         </div>
+      <section className={style.container}>
+        <Card>
+          <div className={style.logocontainer}>
+            <PiIdentificationCard size={33} className={style.icon} />
+          </div>
 
-        <div className={style.text}>
-          <p>
+          <div className={style.header}>
+            <p>Verify email</p>
+          </div>
+
+          <div className={style.text}>
             <p>
-              click on the email sent to
-              <br />
-              {"email"}
-              <br />
-              to verify Email.
+              <p>
+                click on the email sent to
+                <br />
+                {"email"}
+                <br />
+                to verify Email.
+              </p>
             </p>
-          </p>
-        </div>
+          </div>
 
-        <div className={style.button}>
-          <Button type="submit" text="Resend Link" onClick={() => {}} />
-        </div>
-      </Card>
-    </section>
+          <div className={style.button}>
+            <Button type="submit" text="Resend Link" onClick={() => {}} />
+          </div>
+        </Card>
+      </section>
+    </>
   );
 };
 

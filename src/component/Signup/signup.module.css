@@ -1,7 +1,10 @@
 .container {
   display: flex;
 }
-
+.cyberpaylogo {
+  display: flex;
+  padding-bottom: 2rem;
+}
 .details > p {
   font-weight: 600;
   font-size: 24px;
@@ -14,6 +17,13 @@
 .place {
   display: flex;
   gap: 2rem;
+}
+
+.check > span {
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+  padding-left: 1rem;
 }
 
 .container > .details {
@@ -55,7 +65,8 @@
 }
 
 .futures > p {
-  padding-bottom: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   font-weight: 600;
   font-size: 24px;
 }
@@ -91,4 +102,9 @@
 
 .link {
   text-decoration: none;
+}
+
+.check {
+  display: flex;
+  align-items: center;
 }

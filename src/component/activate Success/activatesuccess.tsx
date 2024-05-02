@@ -4,34 +4,42 @@ import { Card } from "../../customs";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import Button from "../../customs/button/button";
 import { useNavigate } from "react-router-dom";
+import {ReactComponent as Logo} from "../../assets/logo.svg"
 
 const ActivateSuccess = () => {
   const Navigate = useNavigate();
 
   return (
-    <section className={style.container}>
-      <Card>
-        <div className={style.logocontainer}>
-          <RiVerifiedBadgeFill size={28} className={style.verified} />
-        </div>
+    <>
+      
+      <div className={style.cyberpaylogo}>
+< Logo/>
 
-        <div>
-          <p>Email verified</p>
-          <p>
-            Your email is verifed <br />
-            successfully click below to login
-          </p>
-        </div>
+      </div>
+      <section className={style.container}>
+        <Card>
+          <div className={style.logocontainer}>
+            <RiVerifiedBadgeFill size={28} className={style.verified} />
+          </div>
 
-        <div className={style.button}>
-          <Button
-            text="Login"
-            type="submit"
-            onClick={() => Navigate("/Log-in")}
-          />
-        </div>
-      </Card>
-    </section>
+          <div>
+            <p>Email verified</p>
+            <p>
+              Your email is verifed <br />
+              successfully click below to login
+            </p>
+          </div>
+
+          <div className={style.button}>
+            <Button
+              text="Login"
+              type="submit"
+              onClick={() => Navigate("/Log-in")}
+            />
+          </div>
+        </Card>
+      </section>
+    </>
   );
 };
 

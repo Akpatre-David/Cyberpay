@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
 import { SignupValidation } from "../../Validation/signup";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
+import { InputCheckBox } from "../../customs";
+
 
 const Signup = () => {
   return (
@@ -29,6 +31,7 @@ const Signup = () => {
                 password: "",
                 cpassword: "",
                 country: "",
+                checkbox:"",
               }}
               validationSchema={SignupValidation}
               onSubmit={(values) => {
@@ -91,6 +94,12 @@ const Signup = () => {
                       name="country"
                     />
 
+                    <div className={style.check}>
+                      <InputCheckBox type="checkbox" name="checkbox" />
+                      <span>
+                        I accept Cyberpay’s Privacy Policy and Terms of Use
+                      </span>
+                    </div>
                     <div className={style.button}>
                       <Button
                         text="Create my account"

@@ -1,5 +1,5 @@
 .details {
-  margin-top: 1rem;
+  
   display: flex;
   flex-direction: column;
 }
@@ -13,8 +13,8 @@
 input {
   padding: 1rem;
   border-radius: 4.1px;
-  width: 360px;
-  height: 56px;
+  width: 36rem;
+  height: 5.6rem;
   font-family: "BRFirma-Medium", sans-serif !important;
   border: 1px solid #dadada;
 }

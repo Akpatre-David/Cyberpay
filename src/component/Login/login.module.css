@@ -54,3 +54,25 @@
 Input {
   margin-bottom: 1rem;
 }
+
+
+.check{
+  display: flex;
+  margin-top: 1rem;
+}
+
+.check > span{
+  padding-right: 12rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 12px;
+  padding-left: 1rem;
+  color: #616161;
+}
+
+.forgotlink{
+  color: #4A4A4A;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 12px;
+}

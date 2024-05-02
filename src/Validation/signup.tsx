@@ -12,5 +12,6 @@ export const SignupValidation = Yup.object({
     .oneOf([Yup.ref("password")], "Passwords must match")
     .required("Please Confirm Password"),
 
-  country: Yup.string().required("Plaese Enter Country")
+  country: Yup.string().required("Plaese Enter Country"), 
+  checkbox: Yup.string().required("please accept our terms")
 });

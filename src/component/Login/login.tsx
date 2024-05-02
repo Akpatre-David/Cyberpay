@@ -7,6 +7,7 @@ import { Input } from "../../customs";
 import Button from "../../customs/button/button";
 import { LoginValidation } from "../../Validation/Login";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
+import { InputCheckBox } from "../../customs";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -55,6 +56,14 @@ const Login = () => {
                       name="password"
                       type="password"
                     />
+
+                    <div className={style.check}>
+                      <InputCheckBox type="checkbox" name="checkbox" />
+                      <span>Remeber me</span>
+                      <Link to="/Forgot-Password" className={style.forgotlink}>
+                        Forgot Your password
+                      </Link>
+                    </div>
 
                     <div className={style.button}>
                       <Button text="Sign In" type="submit" onClick={() => {}} />
