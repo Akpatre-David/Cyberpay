@@ -9,7 +9,6 @@ import { SignupValidation } from "../../Validation/signup";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { InputCheckBox } from "../../customs";
 
-
 const Signup = () => {
   return (
     <>
@@ -31,7 +30,7 @@ const Signup = () => {
                 password: "",
                 cpassword: "",
                 country: "",
-                checkbox:"",
+                checkbox: "",
               }}
               validationSchema={SignupValidation}
               onSubmit={(values) => {
@@ -100,6 +99,7 @@ const Signup = () => {
                         I accept Cyberpay’s Privacy Policy and Terms of Use
                       </span>
                     </div>
+
                     <div className={style.button}>
                       <Button
                         text="Create my account"

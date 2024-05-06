@@ -1,6 +1,12 @@
-.header > input{
-    padding: 0 !important;
-    width: 20px;
-    height: 20px;
-    border: 1px solid #9F9F9F;
+.header > input {
+  padding: 0 !important;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #9f9f9f;
+}
+
+.error {
+  color: red;
+  font-size: 1rem;
+  font-weight: bold;
 }

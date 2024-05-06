@@ -27,7 +27,7 @@ const InputCheckBox: FC<CheckBoxProps> = ({
           <div className={style.header}>
             <label>{label}</label>
             <input {...field} type={type} value={value} onChange={onChange} />
-            {meta.touched && meta.error && <div>{meta.error}</div>}
+            {meta.touched && meta.error && <div className={style.error}>{meta.error}</div>}
           </div>
         )}
       </Field>
