@@ -1,15 +1,53 @@
-import React from "react";
 import style from "./signup.module.css";
 import { Form, Formik } from "formik";
 import { Input } from "../../customs";
+import { Select } from "../../customs";
 import Button from "../../customs/button/button";
 import { Link } from "react-router-dom";
-import { FaCheckCircle } from "react-icons/fa";
 import { SignupValidation } from "../../Validation/signup";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { InputCheckBox } from "../../customs";
+import { FaCircleCheck } from "react-icons/fa6";
 
 const Signup = () => {
+  const Country = [
+    { CountryName: "Algeria" },
+    { CountryName: "Angola" },
+    { CountryName: "Benin" },
+    { CountryName: "Botswana" },
+    { CountryName: "Burkina Faso" },
+    { CountryName: "Burundi" },
+    { CountryName: "Cape Verde" },
+    { CountryName: "Cameroon" },
+    { CountryName: "Central African Republic" },
+    { CountryName: "Chad" },
+    { CountryName: "Comoros" },
+    { CountryName: "Democratic Republic of the Congo" },
+    { CountryName: "Republic of the Congo" },
+    { CountryName: "Djibouti" },
+    { CountryName: "Egypt" },
+    { CountryName: "Equatorial Guinea" },
+    { CountryName: "Eritrea" },
+    { CountryName: "Ethiopia" },
+    { CountryName: "Côte d’Ivoire (Ivory Coast)" },
+    { CountryName: "Gabon" },
+    { CountryName: "Gambia" },
+    { CountryName: "Ghana" },
+    { CountryName: "Guinea" },
+    { CountryName: "Guinea" },
+
+    // Add more user types as needed
+
+    ,
+  ];
+
+  // Map the array to generate the options
+  const countryOptions = Country.map((type) => (
+    <option key={type.CountryName} value={type.CountryName}>
+      {type.CountryName}
+    </option>
+  ));
+
   return (
     <>
       <section className={style.container}>
@@ -18,7 +56,7 @@ const Signup = () => {
             <Logo />
           </div>
 
-          <p>build the future with cyberpay</p>
+          <p>Build the future with Cyberpay</p>
 
           <div>
             <Formik
@@ -39,7 +77,7 @@ const Signup = () => {
               {(props) => {
                 return (
                   <Form>
-                    <div className={style.place}>
+                    <div className={style.typing}>
                       <Input
                         type="text"
                         label="Business Name"
@@ -54,7 +92,7 @@ const Signup = () => {
                       />
                     </div>
 
-                    <div className={style.place}>
+                    <div className={style.typing}>
                       <Input
                         type="text"
                         label="Phone Number"
@@ -70,7 +108,7 @@ const Signup = () => {
                       />
                     </div>
 
-                    <div className={style.place}>
+                    <div className={style.typing}>
                       <Input
                         type="password"
                         label="Password"
@@ -86,12 +124,14 @@ const Signup = () => {
                       />
                     </div>
 
-                    <Input
+                    <Select
                       type="text"
                       label="Country"
                       placeholder="Input Country"
                       name="country"
-                    />
+                      className={style.select}>
+                      {countryOptions}
+                    </Select>
 
                     <div className={style.check}>
                       <InputCheckBox type="checkbox" name="checkbox" />
@@ -125,37 +165,36 @@ const Signup = () => {
         <section className={style.futures}>
           <p>Awesome features that awaits you</p>
 
-          <div className={style.listing}>
-            <FaCheckCircle size={25} className={style.circle} />
+          <section>
+            <div className={style.cycle}>
+              <FaCircleCheck size={20} className={style.svg} />
+              <p className={style.txt}>
+                Access our API which include access to
+                <br />
+                bank account and transaction debit.
+              </p>
+            </div>
+            <div className={style.cycle}>
+              <FaCircleCheck size={20} className={style.svg} />
+              <p className={style.txt}>
+                Use sample data to try out our APIs in our
+                <br />
+                Sandbox environment.
+              </p>
+            </div>
+            <div className={style.cycle}>
+              <FaCircleCheck size={20} className={style.svg} />
+              <p className={style.txt}>
+                Use information from up to 100 free API calls
+                <br />
+                when you're ready to start building.
+              </p>
+            </div>
+          </section>
 
-            <span>
-              Access our API which include access to
-              <br />
-              bank account and transaction details.
-            </span>
-          </div>
-
-          <div className={style.listing}>
-            <FaCheckCircle size={25} className={style.circle} />
-
-            <span>
-              Use sample data to try out our APIs in our <br /> sandbox
-              environment.
-            </span>
-          </div>
-
-          <div className={style.listing}>
-            <FaCheckCircle size={25} className={style.circle} />
-
-            <span>
-              Use information from up to 1000 free API calls <br /> when you are
-              ready to start building.
-            </span>
-          </div>
-
-          <div className={style.endofutures}>
-            <span>Got Question?</span>
-            <Link to="" className={style.link}>
+          <div className={style.contact}>
+            <span>Got Questions?</span>
+            <Link to="/" className={style.link}>
               Contact Sales
             </Link>
           </div>

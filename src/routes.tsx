@@ -11,7 +11,7 @@ import Signup from "./component/Signup/signup";
 
 export const routes = [
   {
-    path: "/Log-in",
+    path: "/",
     element: <Login />,
   },
 
@@ -21,7 +21,7 @@ export const routes = [
   },
 
   {
-    path: "/Email",
+    path: "/email",
     element: <Email />,
   },
 

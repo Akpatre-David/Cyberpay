@@ -22,7 +22,7 @@ const ForgotPassword = () => {
         <Card>
           <div className={style.header}>
             <p>reset password</p>
-            <p>enter email linked to your account</p>
+            <p>Enter email linked to your account</p>
           </div>
           <div>
             <Formik
@@ -45,7 +45,7 @@ const ForgotPassword = () => {
 
                     <div className={style.button}>
                       <Button
-                        text="send reset link"
+                        text="Send reset link"
                         type="submit"
                         onClick={() => {}}
                       />

@@ -1,7 +1,16 @@
 .card {
   padding: 4rem;
+  margin-top: 2rem;
   box-shadow: 2px 2px 8px 0px #00000040;
-  width: fit-content;
-  margin-top: 3rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   border-radius: 0.1rem;
+
+  @media screen and (min-width: 768px) {
+    padding: 5rem;
+    box-shadow: 2px 2px 8px 0px #00000040;
+    width: 47.2rem;
+    margin-top: 3rem;
+    border-radius: 0.1rem;
+  }
 }

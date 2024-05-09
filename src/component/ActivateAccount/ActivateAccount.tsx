@@ -5,20 +5,20 @@ import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import { PiIdentificationCard } from "react-icons/pi";
 import Email from "../Email/email";
 import Button from "../../customs/button/button";
-import {ReactComponent as Logo} from "../../assets/logo.svg"
+import { ReactComponent as Logo } from "../../assets/logo.svg";
+import { ReactComponent as Verifiedemail } from "../../assets/verifiedemail.svg";
 
 const AcctivateAccount = () => {
   return (
     <>
-      
-
       <div className={style.cyberpaylogo}>
         <Logo />
-        </div>
+      </div>
+
       <section className={style.container}>
         <Card>
           <div className={style.logocontainer}>
-            <PiIdentificationCard size={33} className={style.icon} />
+            <Verifiedemail />
           </div>
 
           <div className={style.header}>
@@ -27,13 +27,11 @@ const AcctivateAccount = () => {
 
           <div className={style.text}>
             <p>
-              <p>
-                click on the email sent to
-                <br />
-                {"email"}
-                <br />
-                to verify Email.
-              </p>
+              Click on the email sent to
+              <br />
+              <span> akpatredavid17@gmail.com</span>
+              <br />
+              to verify Email.
             </p>
           </div>
 

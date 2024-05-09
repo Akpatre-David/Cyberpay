@@ -4,7 +4,8 @@ import { Card } from "../../customs";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import Button from "../../customs/button/button";
 import { useNavigate } from "react-router-dom";
-import {ReactComponent as Logo} from "../../assets/logo.svg"
+import { ReactComponent as Logo } from "../../assets/logo.svg"
+import {ReactComponent as ActivationSuccess} from "../../assets/activatonsuccess.svg"
 
 const ActivateSuccess = () => {
   const Navigate = useNavigate();
@@ -19,14 +20,14 @@ const ActivateSuccess = () => {
       <section className={style.container}>
         <Card>
           <div className={style.logocontainer}>
-            <RiVerifiedBadgeFill size={28} className={style.verified} />
+            <ActivationSuccess />
           </div>
 
           <div>
             <p>Email verified</p>
             <p>
-              Your email is verifed <br />
-              successfully click below to login
+              Your email is verified <br />
+              successfully. Click below to login
             </p>
           </div>
 

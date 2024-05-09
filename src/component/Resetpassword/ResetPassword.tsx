@@ -10,7 +10,6 @@ import { ReactComponent as Logo } from "../../assets/logo.svg";
 const ResetPassword = () => {
   return (
     <>
-      
       <div className={style.cyberpaylogo}>
         <Logo />
       </div>

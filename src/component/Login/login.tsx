@@ -11,11 +11,7 @@ import { InputCheckBox } from "../../customs";
 
 const Login = () => {
   const navigate = useNavigate();
-  // const [remember, setremember] = useState(false);
-
-  // const Handleremember = () => {
-  //   setremember(!remember);
-  // };
+  
 
   return (
     <>
@@ -61,7 +57,7 @@ const Login = () => {
                       <InputCheckBox type="checkbox" name="checkbox" />
                       <span>Remeber me</span>
                       <Link to="/Forgot-Password" className={style.forgotlink}>
-                        Forgot Your password
+                        Forgot your password
                       </Link>
                     </div>
 

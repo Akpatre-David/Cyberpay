@@ -3,6 +3,10 @@
   width: 20px;
   height: 20px;
   border: 1px solid #9f9f9f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .error {

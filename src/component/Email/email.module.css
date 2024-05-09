@@ -15,35 +15,30 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  margin-bottom: 2.5rem;
   background-color: #eaf2f9;
   height: 76px;
   width: 76px;
   border-radius: 13px;
-  margin-left: 9rem;
-}
-
-.envo {
-  display: flex;
-  justify-content: center;
-  color: #2f8ed6;
+  margin: auto;
 }
 
 div > .check {
+  margin-top: 3.5rem;
   font-size: 20px;
   font-weight: 700;
   text-align: center;
   color: #4a4a4a;
-  margin-bottom: 1rem;
-  text-transform: capitalize;
+
+  font-family: "BRFirma-Medium", sans-serif !important;
 }
 
 div > .text {
-  margin-bottom: 3rem;
+  margin-top: 1.6rem;
   font-size: 1.6rem;
   font-weight: 400;
   text-align: center;
   color: #4a4a4a;
+  margin-bottom: 5.4rem;
 }
 
 .button {
@@ -52,7 +47,8 @@ div > .text {
 }
 
 .button > Button {
-  text-transform: capitalize;
   padding: 1rem 8rem;
-  margin-bottom: 4rem;
+  margin-bottom: 5.8rem;
+  font-weight: 600;
+  font-size: 16px;
 }

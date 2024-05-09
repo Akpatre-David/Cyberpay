@@ -1,111 +1,120 @@
 .container {
   display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 }
-.cyberpaylogo {
-  display: flex;
-  padding-bottom: 2rem;
+
+.typing {
+  margin-right: 2rem;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    gap: 2.4rem;
+  }
 }
+
+.details {
+  margin-left: 2rem;
+  margin-top: 2rem;
+  @media screen and (min-width: 670px) {
+    margin-left: 128px;
+    margin-right: 5rem;
+  }
+}
+
 .details > p {
   font-weight: 600;
-  font-size: 24px;
-  color: #4a4a4a;
-  text-transform: capitalize;
+  font-size: 2.4rem;
   margin-bottom: 2rem;
-  color: #4a4a4a;
 }
 
-.place {
+.check {
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  flex-direction: row;
 }
 
-.check > span {
-  font-weight: 500;
-  font-size: 1.2rem;
-  text-align: center;
-  padding-left: 1rem;
-  color: #616161;
-}
-
-.container > .details {
-  width: 60%;
-  padding: 4rem;
-}
-
-.container > .futures {
-  background-color: #fbfbfb;
-  width: 40%;
-  height: 100vh;
-}
-
-.button > Button {
-  font-weight: 600;
-  font-size: 16px;
-  border-radius: 4.1px;
-  padding: 2rem 11rem;
-  margin-bottom: 1rem;
-  text-align: center;
+.button {
+  margin-bottom: 2rem;
 }
 
 .end > span {
   font-weight: 400;
   font-size: 1.4rem;
   color: #4a4a4a;
-  margin-bottom: 1rem;
+}
+
+/* for the otherside of the flex */
+
+.futures {
+  background-color: #fbfbfb;
+  padding-left: 2rem;
+  width: 100vw;
+  @media screen and (min-width: 768px) {
+    background-color: #fbfbfb;
+    padding-left: 2rem;
+    width: 60%;
+    height: 100vh;
+  }
+}
+.futures > p:nth-of-type(1) {
+  font-weight: 600;
+  font-size: 2.4rem;
+  color: #4a4a4a;
+  margin-top: 24px;
+}
+
+.cycle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0 !important;
+}
+
+.txt {
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding-left: 1rem;
+  margin-top: 2.5rem;
+  display: flex;
+  color: #4a4a4a;
+}
+.svg {
+  margin-top: 3rem;
+  display: flex;
+  color: blue;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact {
+  margin-top: 35rem;
+  text-decoration: none;
+}
+.contact > span {
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: #4a4a4a;
 }
 
 .link {
   text-decoration: none;
   color: #2f8ed6;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 1.4rem;
+  margin-left: 0.5rem;
 }
-
-.futures {
-  padding: 20px;
-}
-
-.futures > p {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  font-weight: 600;
-  font-size: 24px;
-}
-
-.listing {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 1rem;
-}
-
-.listing > span {
-  margin-left: 1rem;
-  font-weight: 400;
-  font-size: 1.6rem;
-  color: #4a4a4a;
-}
-
-.circle {
-  display: flex;
-  color: #2c83c5;
-}
-
-.endofutures {
-  margin-left: 2rem;
-  margin-top: 20rem;
-}
-
-.endofutures > span {
-  font-weight: 400;
-  font-size: 14px;
-  color: #4a4a4a;
-}
-
-.link {
-  text-decoration: none;
-}
-
-.check {
-  display: flex;
-  align-items: center;
+.select {
+  padding: 1rem;
+  border-radius: 4.1px;
+  width: 36rem;
+  height: 5.6rem;
+  font-family: "BRFirma-Medium", sans-serif !important;
+  border: 1px solid #dadada;
+  margin-bottom:8px;
 }

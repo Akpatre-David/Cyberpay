@@ -1,7 +1,7 @@
 .details {
-  
   display: flex;
   flex-direction: column;
+  margin-bottom: 1rem;
 }
 
 .details > label {
@@ -17,21 +17,22 @@ input {
   height: 5.6rem;
   font-family: "BRFirma-Medium", sans-serif !important;
   border: 1px solid #dadada;
+  margin-bottom: 8px;
 }
 
 input::placeholder {
   font-weight: 400;
   font-size: 1.4rem;
   color: #9f9f9f;
+  padding-left: 0.9rem;
 }
 
 input:focus {
   border: 1px solid #1670be;
 }
 
-
-.error{
+.error {
   color: red;
-  font-size:1rem ;
+  font-size: 1rem;
   font-weight: bold;
 }

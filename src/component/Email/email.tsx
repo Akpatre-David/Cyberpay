@@ -3,26 +3,24 @@ import { Card } from "../../customs";
 import { FaEnvelopeOpen } from "react-icons/fa";
 import style from "./email.module.css";
 import Button from "../../customs/button/button";
-import {ReactComponent as Logo} from "../../assets/logo.svg"
-
-
+import { ReactComponent as Logo } from "../../assets/logo.svg";
+import { ReactComponent as Letter } from "../../assets/letter.svg";
 
 const Email = () => {
   return (
     <>
-
       <div className={style.cyberpaylogo}>
-<Logo />
-
+        <Logo />
       </div>
+
       <section className={style.container}>
         <Card>
           <div className={style.envelop}>
-            <FaEnvelopeOpen size={28} className={style.envo} />
+            <Letter />
           </div>
 
           <div>
-            <p className={style.check}>check your email</p>
+            <p className={style.check}>Check your email</p>
 
             <p className={style.text}>
               Click on the link sent to your email <br />
@@ -30,7 +28,7 @@ const Email = () => {
             </p>
 
             <div className={style.button}>
-              <Button text="Resend Mail" type="submit" onClick={() => {}} />
+              <Button text="Resend email" type="submit" onClick={() => {}} />
             </div>
           </div>
         </Card>

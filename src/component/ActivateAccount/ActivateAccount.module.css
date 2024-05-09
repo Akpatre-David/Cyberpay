@@ -12,7 +12,7 @@
 }
 
 .logocontainer {
-  margin-left: 9rem;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,28 +20,30 @@
   width: 76px;
   background-color: #eaf2f9;
   border-radius: 1.3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
-.header {
+.header > p {
   font-weight: 700;
   font-size: 2rem;
-  text-align: center;
   text-align: center;
   color: #4a4a4a;
   margin-bottom: 1rem;
 }
 
-.icon {
-  color: #2f8ed6;
-}
-
-.text {
+.text > p:nth-child(1) {
   font-weight: 400;
   font-size: 1.6rem;
   text-align: center;
   line-height: 1.5;
-  margin-bottom: 1rem;
+  margin-bottom: 3.6rem;
+  color: #4a4a4a;
+}
+
+.text > span {
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #4a4a4a;
 }
 
 .button {
@@ -54,6 +56,7 @@
   text-align: center;
   border-radius: 4.1px;
   padding: 1rem 8rem;
-  font-size: 16px;
-  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  margin-bottom: 4rem;
+  font-weight: 600;
 }

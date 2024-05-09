@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+select {
+  padding: 1rem;
+  border-radius: 4.1px;
+  width: 30rem;
+  height: 5.6rem;
+  font-family: "BRFirma-Medium", sans-serif !important;
+  border: 1px solid #dadada;
+  margin-bottom: 8px;
+
+  @media (min-width: 680px) {
+     width: 30rem;
+  height: 5.6rem;
+  }
+}
+
+select:hover,
+select:focus {
+  border-color: black;
+  outline: none;
+}
+select::placeholder {
+  color: #8a9ba3 !important;
+  font-size: 14px;
+}
+
+label {
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #4a4a4a;
+}
+.error {
+  font-size: 1rem;
+  color: red;
+  font-weight: bold;
+}
