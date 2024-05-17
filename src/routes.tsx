@@ -1,13 +1,13 @@
 import path from "path";
 import React from "react";
 
-import ForgotPassword from "./component/Forgotpassword/ForgotPassword";
-import Email from "./component/Email/email";
-import ResetPassword from "./component/Resetpassword/ResetPassword";
-import AcctivateAccount from "./component/ActivateAccount/ActivateAccount";
-import ActivateSuccess from "./component/activate Success/activatesuccess";
-import Login from "./component/Login/login";
-import Signup from "./component/Signup/signup";
+import Email from "./component/email/email";
+import ResetPassword from "./component/resetPassword/ResetPassword";
+import Login from "./component/login/login";
+import Signup from "./component/signUp/signUp";
+import ForgotPassword from "./component/forgotPassword/forgotPassword";
+import ActivateAccount from "./component/activateAccount/activateAccount";
+import ActivateSuccess from "./component/activateSuccess/activateSuccess";
 
 export const routes = [
   {
@@ -31,12 +31,12 @@ export const routes = [
   },
 
   {
-    path: "activate-account",
-    element: <AcctivateAccount />,
+    path: "activate-Account",
+    element: <ActivateAccount />,
   },
 
   {
-    path: "activate-success",
+    path: "activate-Success",
     element: <ActivateSuccess />,
   },
 

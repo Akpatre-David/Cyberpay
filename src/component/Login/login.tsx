@@ -1,17 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../../customs/card/card";
 import style from "./login.module.css";
-import { Formik } from "formik";
-import { Form, Link, useNavigate } from "react-router-dom";
+import { Form, Formik, FormikValues } from "formik";
+import { Link, useNavigate } from "react-router-dom";
 import { Input } from "../../customs";
 import Button from "../../customs/button/button";
-import { LoginValidation } from "../../Validation/Login";
+import { loginValidation } from "../../Validation/login";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { InputCheckBox } from "../../customs";
+import axios from "axios";
+import { useMutation } from "@tanstack/react-query";
+import apiRequest from "../../utilis/Apicall";
+import { notify } from "../../utilis/notify";
+import { Spin } from "antd";
+import { LoginResponse } from "./type";
+
+interface Payload {
+  email: string;
+  password: string;
+}
+
+const baseurl = process.env.REACT_APP_BASE_URL;
 
 const Login = () => {
   const navigate = useNavigate();
-  
+
+  const userLogin = async (payload: Payload) => {
+    return await apiRequest<LoginResponse>("post", "/Account/Login", payload);
+  };
+
+  const loginUserMutation = useMutation({
+    mutationKey: ["login-user"],
+    mutationFn: userLogin,
+  });
+
+  const loginUserhandler = async (values: FormikValues) => {
+    const payload: Payload = {
+      email: values.email,
+      password: values.password,
+    };
+
+    try {
+      await loginUserMutation.mutateAsync(payload, {
+        onSuccess(data) {
+          notify(data?.data?.message || "Login successful", "success");
+          console.log(data?.data?.message);
+        },
+      });
+    } catch (error: any) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -31,10 +70,11 @@ const Login = () => {
               initialValues={{
                 email: "",
                 password: "",
+                checkbox: "",
               }}
-              validationSchema={LoginValidation}
+              validationSchema={loginValidation}
               onSubmit={(values) => {
-                console.log(values);
+                loginUserhandler(values);
               }}>
               {(props) => {
                 return (
@@ -51,24 +91,32 @@ const Login = () => {
                       placeholder="Enter Password"
                       name="password"
                       type="password"
+                      isPasswordInput
+                      
                     />
 
                     <div className={style.check}>
                       <InputCheckBox type="checkbox" name="checkbox" />
+
                       <span>Remeber me</span>
+
                       <Link to="/Forgot-Password" className={style.forgotlink}>
                         Forgot your password
                       </Link>
                     </div>
 
                     <div className={style.button}>
-                      <Button text="Sign In" type="submit" onClick={() => {}} />
+                      <Button type="submit">
+                        {loginUserMutation.isPending ? <Spin /> : "Sign in"}
+                      </Button>
                     </div>
 
                     <span className={style.signup}>Dont have an account? </span>
+
                     <Link to="/sign-up" className={style.link}>
-                      Sign Up
+                      {"Sign Up"}
                     </Link>
+<Spin />
                   </Form>
                 );
               }}

@@ -6,10 +6,10 @@ import Button from "../../customs/button/button";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { ReactComponent as Letter } from "../../assets/letter.svg";
 
-const Email = () => {
+const email = () => {
   return (
     <>
-      <div className={style.cyberpaylogo}>
+      <div className={style.cyberPayLogo}>
         <Logo />
       </div>
 
@@ -28,7 +28,8 @@ const Email = () => {
             </p>
 
             <div className={style.button}>
-              <Button text="Resend email" type="submit" onClick={() => {}} />
+              
+              <Button type="submit">{"Resend email"}</Button>
             </div>
           </div>
         </Card>
@@ -37,4 +38,4 @@ const Email = () => {
   );
 };
 
-export default Email;
+export default email;

@@ -1,21 +1,50 @@
 import React from "react";
-import style from "./ForgetPassword.module.css";
+import style from "./forgetPassword.module.css";
 import { Card, Input } from "../../customs";
-import { Form, Formik } from "formik";
-import { ForgotpasswordValidation } from "../../Validation/ForgotPassword";
+import { Form, Formik, FormikValues } from "formik";
+import { forgotPasswordValidation } from "../../Validation/forgotPassword";
 import Button from "../../customs/button/button";
 import { Link } from "react-router-dom";
-import { ReactComponent as Logo} from "../../assets/logo.svg"
+import { ReactComponent as Logo } from "../../assets/logo.svg";
+import apiRequest from "../../utilis/Apicall";
+import { useMutation } from "@tanstack/react-query";
+import { Spin } from "antd";
+
+interface Payload {
+  email: string;
+}
+
+const baseurl = process.env.REACT_APP_BASE_URL;
 
 const ForgotPassword = () => {
+  const forgotPassword = async (payload: Payload) => {
+    return await apiRequest("post", "/Account/Forgot", payload);
+  };
+
+  const forgotPasswordMutation = useMutation({
+    mutationKey: ["forgot-password"],
+    mutationFn: forgotPassword,
+  });
+
+  const forgotPasswordHandler = async (values: FormikValues) => {
+    const payload: Payload = {
+      email: values.email,
+    };
+
+    try {
+      await forgotPasswordMutation.mutateAsync(payload, {
+        onSuccess(data) {
+          console.log(data);
+        },
+      });
+    } catch (error: any) {
+      console.log(error);
+    }
+  };
   return (
     <>
-      
-      <div className={style.cyberpaylogo}>
-
-<Logo />
-
-
+      <div className={style.cyberPayLogo}>
+        <Logo />
       </div>
 
       <section className={style.container}>
@@ -29,9 +58,9 @@ const ForgotPassword = () => {
               initialValues={{
                 email: "",
               }}
-              validationSchema={ForgotpasswordValidation}
+              validationSchema={forgotPasswordValidation}
               onSubmit={(values) => {
-                console.log(values);
+              forgotPasswordHandler(values);
               }}>
               {(props) => {
                 return (
@@ -44,15 +73,11 @@ const ForgotPassword = () => {
                     />
 
                     <div className={style.button}>
-                      <Button
-                        text="Send reset link"
-                        type="submit"
-                        onClick={() => {}}
-                      />
+                      <Button type="submit">{forgotPasswordMutation.isPending ? <Spin /> : "Send resend Link"}</Button>
                     </div>
 
                     <div className={style.last}>
-                      <span className={style.signup}>
+                      <span className={style.signUp}>
                         Don't have an account?
                       </span>
                       <Link to="/sign-up" className={style.link}>

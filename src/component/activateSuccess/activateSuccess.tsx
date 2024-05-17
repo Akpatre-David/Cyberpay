@@ -1,26 +1,23 @@
 import React from "react";
-import style from "./activatesuccess.module.css";
+import style from "./activateSuccess.module.css";
 import { Card } from "../../customs";
-import { RiVerifiedBadgeFill } from "react-icons/ri";
 import Button from "../../customs/button/button";
+import { ReactComponent as Logo } from "../../assets/logo.svg";
+import {ReactComponent as ActivationLogo} from "../../assets/ActivationLogo.svg"
 import { useNavigate } from "react-router-dom";
-import { ReactComponent as Logo } from "../../assets/logo.svg"
-import {ReactComponent as ActivationSuccess} from "../../assets/activatonsuccess.svg"
 
 const ActivateSuccess = () => {
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <>
-      
-      <div className={style.cyberpaylogo}>
-< Logo/>
-
+      <div className={style.cyberPayLogo}>
+        <Logo />
       </div>
       <section className={style.container}>
         <Card>
-          <div className={style.logocontainer}>
-            <ActivationSuccess />
+          <div className={style.logoContainer}>
+            <ActivationLogo />
           </div>
 
           <div>
@@ -32,11 +29,9 @@ const ActivateSuccess = () => {
           </div>
 
           <div className={style.button}>
-            <Button
-              text="Login"
-              type="submit"
-              onClick={() => Navigate("/Log-in")}
-            />
+            <Button onClick={() => navigate("/Log-in")} type="submit">
+              {"Login"}
+            </Button>
           </div>
         </Card>
       </section>

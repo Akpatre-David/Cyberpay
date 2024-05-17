@@ -1,14 +1,14 @@
 import React from "react";
-import style from "./ActivateAccount.module.css";
+import style from "./activateAccount.module.css";
 import { Card } from "../../customs";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import { PiIdentificationCard } from "react-icons/pi";
-import Email from "../Email/email";
+import Email from "../email/email";
 import Button from "../../customs/button/button";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { ReactComponent as Verifiedemail } from "../../assets/verifiedemail.svg";
 
-const AcctivateAccount = () => {
+const activateAccount = () => {
   return (
     <>
       <div className={style.cyberpaylogo}>
@@ -36,7 +36,7 @@ const AcctivateAccount = () => {
           </div>
 
           <div className={style.button}>
-            <Button type="submit" text="Resend Link" onClick={() => {}} />
+            <Button type="submit">{"Resend Link"}</Button>
           </div>
         </Card>
       </section>
@@ -44,4 +44,4 @@ const AcctivateAccount = () => {
   );
 };
 
-export default AcctivateAccount;
+export default activateAccount;

@@ -1,58 +1,96 @@
-import style from "./signup.module.css";
-import { Form, Formik } from "formik";
+import style from "./signUp.module.css";
+import { Form, Formik, FormikValues } from "formik";
 import { Input } from "../../customs";
 import { Select } from "../../customs";
 import Button from "../../customs/button/button";
-import { Link } from "react-router-dom";
-import { SignupValidation } from "../../Validation/signup";
+import { Link, useNavigate } from "react-router-dom";
+import { signupValidation } from "../../Validation/signUp";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { InputCheckBox } from "../../customs";
 import { FaCircleCheck } from "react-icons/fa6";
+import { Country } from "../../utilis/country-data";
+import apiRequest from "../../utilis/Apicall";
+import { useMutation } from "@tanstack/react-query";
+import { notify } from "../../utilis/notify";
+import { Spin } from "antd";
+import { Business } from "../../utilis/business-data";
+// import { signupResponse } from "./signuptype";
+import { signupResponse } from "./signuptype";
+
+interface Payload {
+  businessName: string;
+  businessType: string;
+  phoneNumber: string;
+  businessEmail: string;
+  password: string;
+  confirmPassword: string;
+  country: string;
+}
+
+const baseurl = process.env.REACT_APP_BASE_URL;
 
 const Signup = () => {
-  const Country = [
-    { CountryName: "Algeria" },
-    { CountryName: "Angola" },
-    { CountryName: "Benin" },
-    { CountryName: "Botswana" },
-    { CountryName: "Burkina Faso" },
-    { CountryName: "Burundi" },
-    { CountryName: "Cape Verde" },
-    { CountryName: "Cameroon" },
-    { CountryName: "Central African Republic" },
-    { CountryName: "Chad" },
-    { CountryName: "Comoros" },
-    { CountryName: "Democratic Republic of the Congo" },
-    { CountryName: "Republic of the Congo" },
-    { CountryName: "Djibouti" },
-    { CountryName: "Egypt" },
-    { CountryName: "Equatorial Guinea" },
-    { CountryName: "Eritrea" },
-    { CountryName: "Ethiopia" },
-    { CountryName: "Côte d’Ivoire (Ivory Coast)" },
-    { CountryName: "Gabon" },
-    { CountryName: "Gambia" },
-    { CountryName: "Ghana" },
-    { CountryName: "Guinea" },
-    { CountryName: "Guinea" },
+  const navigate = useNavigate();
 
-    // Add more user types as needed
-
-    ,
-  ];
-
-  // Map the array to generate the options
-  const countryOptions = Country.map((type) => (
-    <option key={type.CountryName} value={type.CountryName}>
-      {type.CountryName}
+  // for the countryOptions
+  const countryOptions = Country.map((item, index) => (
+    <option key={index} value={item.CountryName}>
+      {item.CountryName}
     </option>
   ));
+
+  // for the businessOptions
+  const businessOptions = Business.map((item, index) => (
+    <option key={index} value={item.businessType}>
+      {item.businessType}
+    </option>
+  ));
+
+  const createUser = async (payload: Payload) => {
+    return await apiRequest<signupResponse>(
+      "post",
+      "/Account/Register",
+      payload
+    );
+  };
+
+  const createAcctMutation = useMutation({
+    mutationKey: ["create-user"],
+    mutationFn: createUser,
+  });
+
+  const createUserHandler = async (values: FormikValues) => {
+    const payload: Payload = {
+      businessName: values.businessName,
+      businessType: values.businessType,
+      phoneNumber: values.phoneNumber,
+      businessEmail: values.businessEmail,
+      password: values.password,
+      confirmPassword: values.confirmPassword,
+      country: values.country,
+    };
+
+    try {
+      await createAcctMutation.mutateAsync(payload, {
+        onSuccess(data) {
+          notify(
+            data?.data?.message ||
+              "Signin successful. You will be  redirected to the Login Page",
+            "success"
+          );
+          navigate("/");
+        },
+      });
+    } catch (error: any) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
       <section className={style.container}>
         <section className={style.details}>
-          <div className={style.cyberpaylogo}>
+          <div className={style.cyberPayLogo}>
             <Logo />
           </div>
 
@@ -61,18 +99,17 @@ const Signup = () => {
           <div>
             <Formik
               initialValues={{
-                BusinessName: "",
-                BusinessType: "",
-                Phone: "",
-                email: "",
+                businessName: "",
+                businessType: "",
+                phoneNumber: "",
+                businessEmail: "",
                 password: "",
-                cpassword: "",
+                confirmPassword: "",
                 country: "",
-                checkbox: "",
               }}
-              validationSchema={SignupValidation}
+              validationSchema={signupValidation}
               onSubmit={(values) => {
-                console.log(values);
+                createUserHandler(values);
               }}>
               {(props) => {
                 return (
@@ -82,21 +119,25 @@ const Signup = () => {
                         type="text"
                         label="Business Name"
                         placeholder="Business Name"
-                        name="BusinessName"
+                        name="businessName"
                       />
-                      <Input
-                        type="text"
-                        label="Business Type"
-                        placeholder="Business Type"
-                        name="BusinessType"
-                      />
+                      <div className={style.selectContainer}>
+                        <Select
+                          type="text"
+                          label="Business Type"
+                          placeholder="Select"
+                          name="businessType"
+                          className={style.select}>
+                          {businessOptions}
+                        </Select>
+                      </div>
                     </div>
 
                     <div className={style.typing}>
                       <Input
                         type="text"
                         label="Phone Number"
-                        name="Phone"
+                        name="phoneNumber"
                         placeholder="Phone Number"
                       />
 
@@ -104,7 +145,7 @@ const Signup = () => {
                         type="email"
                         label="Business Email"
                         placeholder="Business Email"
-                        name="email"
+                        name="businessEmail"
                       />
                     </div>
 
@@ -114,44 +155,46 @@ const Signup = () => {
                         label="Password"
                         name="password"
                         placeholder="Input password"
+                        isPasswordInput
                       />
 
                       <Input
                         type="password"
                         label="Confirm Password"
-                        name="cpassword"
-                        placeholder="Confirm passowrd"
+                        name="confirmPassword"
+                        placeholder="Confirm Password"
+                        isPasswordInput
                       />
                     </div>
 
-                    <Select
-                      type="text"
-                      label="Country"
-                      placeholder="Input Country"
-                      name="country"
-                      className={style.select}>
-                      {countryOptions}
-                    </Select>
+                    <div className={style.selectContainer}>
+                      <Select
+                        type="text"
+                        label="Country"
+                        placeholder="Select Country"
+                        name="country"
+                        className={style.select}>
+                        {countryOptions}
+                      </Select>
+                    </div>
 
                     <div className={style.check}>
                       <InputCheckBox type="checkbox" name="checkbox" />
-                      <span>
+                      <Link to="*" className={style.accept}>
                         I accept Cyberpay’s Privacy Policy and Terms of Use
-                      </span>
+                      </Link>
                     </div>
 
                     <div className={style.button}>
-                      <Button
-                        text="Create my account"
-                        type="submit"
-                        onClick={() => {}}
-                      />
+                      <Button type="submit">
+                        {createAcctMutation.isPending ? <Spin /> : "Sign up"}
+                      </Button>
                     </div>
 
                     <div className={style.end}>
                       <span>Have an account?</span>
 
-                      <Link to="/Log-in" className={style.link}>
+                      <Link to="/" className={style.link}>
                         Sign In
                       </Link>
                     </div>
@@ -194,7 +237,7 @@ const Signup = () => {
 
           <div className={style.contact}>
             <span>Got Questions?</span>
-            <Link to="/" className={style.link}>
+            <Link to="" className={style.link}>
               Contact Sales
             </Link>
           </div>

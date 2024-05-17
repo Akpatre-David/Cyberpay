@@ -1,24 +1,18 @@
 import { Field, Formik, FieldProps } from "formik";
 import React, { FC, HtmlHTMLAttributes } from "react";
-import style from "./checkbox.module.css"
+import style from "./checkbox.module.css";
 
 interface CheckBoxProps {
   name?: string;
-  value?: string;
   type?: string;
   label?: string;
   text?: string;
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 const InputCheckBox: FC<CheckBoxProps> = ({
   name,
-
-  value,
   label,
-
   type,
-  onChange,
 }) => {
   return (
     <>
@@ -26,8 +20,10 @@ const InputCheckBox: FC<CheckBoxProps> = ({
         {({ field, meta }: FieldProps) => (
           <div className={style.header}>
             <label>{label}</label>
-            <input {...field} type={type} value={value} onChange={onChange} />
-            {meta.touched && meta.error && <div className={style.error}>{meta.error}</div>}
+            <input {...field} type={type} />
+            {meta.touched && meta.error && (
+              <div className={style.error}>{meta.error}</div>
+            )}
           </div>
         )}
       </Field>

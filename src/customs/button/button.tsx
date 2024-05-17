@@ -1,17 +1,17 @@
-import React, { FC } from "react";
+import React, { FC, PropsWithChildren, ReactNode } from "react";
 import style from "./button.module.css";
 
-interface ButtonProps {
-  text: string;
-  type:string
-  onClick: () => void;
+interface ButtonProps extends PropsWithChildren {
+  type: string;
+  onClick?: () => void;
 }
 
-const Button: FC<ButtonProps> = ({ text, onClick, type }) => {
+const Button: FC<ButtonProps> = ({ onClick, children }) => {
   return (
     <button className={style.primary} onClick={onClick}>
-      {text}
+      {children}
     </button>
   );
 };
+
 export default Button;

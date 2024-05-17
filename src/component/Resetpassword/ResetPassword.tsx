@@ -1,16 +1,59 @@
 import React from "react";
 import style from "./ResetPassword.module.css";
 import { Card, Input } from "../../customs";
-import { Form, Formik } from "formik";
+import { Form, Formik,FormikValues } from "formik";
 import Button from "../../customs/button/button";
-import { ResetPasswordValiation } from "../../Validation/ResetPassword";
+import { resetPasswordValidation } from "../../Validation/resetPassword";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
+import apiRequest from "../../utilis/Apicall";
+import { useMutation } from "@tanstack/react-query";
+import { notify } from "../../utilis/notify";
+import { Spin } from "antd";
+
+
+interface Payload {
+  newPassword: string;
+  confirmPassword: string;
+}
+
+
+const baseurl = process.env.REACT_APP_BASE_URL;
 
 const ResetPassword = () => {
+
+
+
+    const userRestPassword = async (payload: Payload) => {
+      return await apiRequest("post", "/Account/Reset-Password", payload);
+    };
+
+   const resetPasswordMutation = useMutation({
+     mutationKey: ["reset-password"],
+     mutationFn: userRestPassword,
+   });
+  
+   const resetPasswordHandler = async (values: FormikValues) => {
+     const payload: Payload = {
+       newPassword: values.newPassword,
+       confirmPassword: values.confirmPassword,
+     };
+
+     try {
+       await resetPasswordMutation.mutateAsync(payload, {
+         onSuccess(data) {
+            // notify(data?.data?.message || "Password Reset Successful", "success");
+           console.log(data);
+         },
+       });
+     } catch (error: any) {
+       console.log(error);
+     }
+   };
+
   return (
     <>
-      <div className={style.cyberpaylogo}>
+      <div className={style.cyberPayLogo}>
         <Logo />
       </div>
 
@@ -24,12 +67,12 @@ const ResetPassword = () => {
           <div>
             <Formik
               initialValues={{
-                newpassword: "",
-                confirmpassword: "",
+                newPassword: "",
+                confirmPassword: "",
               }}
-              validationSchema={ResetPasswordValiation}
+              validationSchema={resetPasswordValidation}
               onSubmit={(values) => {
-                console.log(values);
+              resetPasswordHandler(values);
               }}>
               {(props) => {
                 return (
@@ -37,31 +80,30 @@ const ResetPassword = () => {
                     <Input
                       label="New Password"
                       type="password"
-                      name="newpassword"
+                      name="newPassword"
                       placeholder="New Password"
-                      value={props.values.newpassword}
-                      onChange={props.handleChange("newpassword")}
+                      isPasswordInput
+                     
                     />
 
                     <Input
                       label="Confirm Password"
                       type="password"
-                      name="confirmpassword"
+                      name="confirmPassword"
                       placeholder="Confirm Password"
-                      value={props.values.confirmpassword}
-                      onChange={props.handleChange("confirmpassword")}
+                      isPasswordInput
+                     
                     />
 
                     <div className={style.button}>
-                      <Button
-                        text="Reset Password"
-                        type="submit"
-                        onClick={() => {}}
-                      />
+
+                      <Button type="submit">
+                        {resetPasswordMutation.isPending ? <Spin /> : "Sign in"}
+                      </Button>
                     </div>
 
                     <div className={style.last}>
-                      <span className={style.signup}>
+                      <span className={style.signUp}>
                         Don't have an account?
                       </span>
                       <Link to="/sign-up" className={style.link}>

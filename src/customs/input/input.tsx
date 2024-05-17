@@ -1,8 +1,9 @@
 import { Field, Formik, FieldProps } from "formik";
-import React, { FC, HtmlHTMLAttributes } from "react";
+import React, { FC, InputHTMLAttributes, ReactNode, useState } from "react";
 import style from "./input.module.css";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 
-interface InputProps {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name?: string;
   placeholder?: string;
   value?: string;
@@ -10,31 +11,53 @@ interface InputProps {
   label?: string;
   disable?: boolean;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  isPasswordInput?: boolean;
 }
 
 const Input: FC<InputProps> = ({
   name,
   placeholder,
-  value,
   label,
   disable,
   type,
-  onChange,
+  isPasswordInput,
 }) => {
+  const [isShowPassword, setIsShowPassword] = useState(false);
+
+  const showPasswordHandle = () => {
+    setIsShowPassword((prevState) => !prevState);
+  };
+
   return (
     <Field name={name}>
       {({ field, meta }: FieldProps) => (
         <div className={style.details}>
           <label>{label}</label>
-          <input
-            {...field}
-            placeholder={placeholder}
-            type={type}
-            value={value}
-            onChange={onChange}
-            disabled={disable}
-          />
-          {meta.touched && meta.error && <div className={style.error}>{meta.error}</div>}
+          <div className={style.inputContainer}>
+            <input
+              {...field}
+              placeholder={placeholder}
+              type={isShowPassword ? "type" : "text"}
+              disabled={disable}
+            />
+            <div className={style.eye}>
+              {isPasswordInput && (
+                <button
+                  className={style.buttonStyle}
+                  onClick={showPasswordHandle}>
+                  {isShowPassword ? (
+                    <FaRegEye size={20} />
+                  ) : (
+                    <FaRegEyeSlash size={20} />
+                  )}
+                </button>
+              )}
+            </div>
+          </div>
+
+          {meta.touched && meta.error && (
+            <div className={style.error}>{meta.error}</div>
+          )}
         </div>
       )}
     </Field>
@@ -42,4 +65,3 @@ const Input: FC<InputProps> = ({
 };
 
 export default Input;
-
