@@ -1,7 +1,7 @@
 export interface LoginResponse {
   statusCode: number;
   message: string;
-  data: string;
+  data: Data;
 }
 
 interface Data {
@@ -12,4 +12,3 @@ interface Data {
   businessEmail: string;
   country: string;
 }
-

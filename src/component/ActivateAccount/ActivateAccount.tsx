@@ -3,21 +3,28 @@ import style from "./activateAccount.module.css";
 import { Card } from "../../customs";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import { PiIdentificationCard } from "react-icons/pi";
-import Email from "../email/email";
 import Button from "../../customs/button/button";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { ReactComponent as Verifiedemail } from "../../assets/verifiedemail.svg";
 
+
+interface Payload {
+  email: string;
+  password: string;
+}
+
+
+
 const activateAccount = () => {
   return (
     <>
-      <div className={style.cyberpaylogo}>
+      <div className={style.CyberPayLogo}>
         <Logo />
       </div>
 
       <section className={style.container}>
         <Card>
-          <div className={style.logocontainer}>
+          <div className={style.logoContainer}>
             <Verifiedemail />
           </div>
 

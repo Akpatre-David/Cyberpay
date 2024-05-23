@@ -40,3 +40,8 @@ code {
 .ant-spin-dot-item {
   background-color: white !important;
 }
+
+
+.ant-modal-body{
+    padding: 0 0 !important;
+}

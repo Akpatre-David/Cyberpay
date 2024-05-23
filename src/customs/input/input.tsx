@@ -37,7 +37,7 @@ const Input: FC<InputProps> = ({
             <input
               {...field}
               placeholder={placeholder}
-              type={isShowPassword ? "type" : "text"}
+              type={isShowPassword ? type : "text"}
               disabled={disable}
             />
             <div className={style.eye}>

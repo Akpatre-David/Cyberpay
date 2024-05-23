@@ -8,11 +8,12 @@ import Signup from "./component/signUp/signUp";
 import ForgotPassword from "./component/forgotPassword/forgotPassword";
 import ActivateAccount from "./component/activateAccount/activateAccount";
 import ActivateSuccess from "./component/activateSuccess/activateSuccess";
+import ModalComponent from "./customs/modals/modal";
 
 export const routes = [
   {
     path: "/",
-    element: <Login />,
+    element: <Login />
   },
 
   {

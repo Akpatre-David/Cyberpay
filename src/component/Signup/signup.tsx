@@ -1,6 +1,6 @@
 import style from "./signUp.module.css";
 import { Form, Formik, FormikValues } from "formik";
-import { Input } from "../../customs";
+import { Input, Modal } from "../../customs";
 import { Select } from "../../customs";
 import Button from "../../customs/button/button";
 import { Link, useNavigate } from "react-router-dom";
@@ -14,8 +14,10 @@ import { useMutation } from "@tanstack/react-query";
 import { notify } from "../../utilis/notify";
 import { Spin } from "antd";
 import { Business } from "../../utilis/business-data";
-// import { signupResponse } from "./signuptype";
 import { signupResponse } from "./signuptype";
+import CustomModal from "../../customs/modals/modal";
+import { useState } from "react";
+import ModalBody from "./modal/modalBody";
 
 interface Payload {
   businessName: string;
@@ -31,6 +33,19 @@ const baseurl = process.env.REACT_APP_BASE_URL;
 
 const Signup = () => {
   const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
   // for the countryOptions
   const countryOptions = Country.map((item, index) => (
@@ -83,6 +98,10 @@ const Signup = () => {
       });
     } catch (error: any) {
       console.log(error);
+      notify(
+        "An error occurred while creating the account. Please try again.",
+        "error"
+      );
     }
   };
 
@@ -180,9 +199,13 @@ const Signup = () => {
 
                     <div className={style.check}>
                       <InputCheckBox type="checkbox" name="checkbox" />
-                      <Link to="*" className={style.accept}>
-                        I accept Cyberpay’s Privacy Policy and Terms of Use
-                      </Link>
+
+                      <label className={style.accept}>
+                        I accept
+                        <span onClick={showModal}>
+                           Cyberpay’s Privacy Policy and Terms of Use
+                        </span>
+                      </label>
                     </div>
 
                     <div className={style.button}>
@@ -243,6 +266,18 @@ const Signup = () => {
           </div>
         </section>
       </section>
+
+      <Modal
+        title="title"
+        isModalOpen={isModalOpen}
+        handleButtonCancel={handleCancel}
+        handleButtonOk={handleOk}
+        showModal={showModal}>
+        <ModalBody
+          handleButtonCancel={handleCancel}
+          handleButtonOk={handleOk}
+        />
+      </Modal>
     </>
   );
 };

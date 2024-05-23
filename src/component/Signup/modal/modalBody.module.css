@@ -1,0 +1,62 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.leftSide {
+  border-right: 1px solid #e5e8ec;
+  padding-top: 2rem;
+}
+
+.rightSide {
+  padding-top: 2rem;
+  text-align: justify;
+  overflow-y: scroll;
+  height: 40vh;
+}
+
+.rightSide > div:nth-of-type(1) {
+  margin-bottom: 2.5rem;
+}
+
+.heading {
+  color: #4a4a4a;
+  font-size: 14px;
+}
+
+.firstDiv {
+  margin-bottom: 2rem;
+}
+
+.firstDiv > span {
+  padding-top: 2rem;
+  margin-left: 1rem;
+}
+
+.footer {
+  border-top: 1px solid #e5e8ec;
+  padding-top: 2rem;
+  justify-content: right;
+  display: flex;
+  gap: 2rem;
+}
+
+.declineButton {
+  color: #2e99d6;
+  border-color: #2e99d6;
+  text-align: center;
+  width: 20rem;
+  border-radius: 0;
+  font-weight: 600;
+}
+
+.acceptButton {
+  color: white;
+  background-color: #2f8ed6;
+  width: 20rem;
+  border-radius: 4.1px;
+}
+.acceptButton:hover {
+  background-color: none !important;
+}

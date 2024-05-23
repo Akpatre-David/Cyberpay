@@ -34,7 +34,7 @@ const Login = () => {
     mutationFn: userLogin,
   });
 
-  const loginUserhandler = async (values: FormikValues) => {
+  const loginUserHandler = async (values: FormikValues) => {
     const payload: Payload = {
       email: values.email,
       password: values.password,
@@ -74,7 +74,7 @@ const Login = () => {
               }}
               validationSchema={loginValidation}
               onSubmit={(values) => {
-                loginUserhandler(values);
+               loginUserHandler(values);
               }}>
               {(props) => {
                 return (

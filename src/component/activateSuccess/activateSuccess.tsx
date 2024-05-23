@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 
 const ActivateSuccess = () => {
   const navigate = useNavigate();
-
   return (
     <>
       <div className={style.cyberPayLogo}>
