@@ -9,6 +9,8 @@ import ForgotPassword from "./component/forgotPassword/forgotPassword";
 import ActivateAccount from "./component/activateAccount/activateAccount";
 import ActivateSuccess from "./component/activateSuccess/activateSuccess";
 import ModalComponent from "./customs/modals/modal";
+import SideBar from "./component/layout/sideBar/sideBar";
+import NotFound from "./component/Error/error";
 
 export const routes = [
   {
@@ -43,6 +45,17 @@ export const routes = [
 
   {
     path: "sign-up",
-    element: <Signup />,
+    element: <Signup />,  
   },
+
+  {
+    path: "sideBar",
+    element: <SideBar/>
+    
+  },
+
+  {
+    path: "notfound",
+    element: <NotFound />
+  }
 ];

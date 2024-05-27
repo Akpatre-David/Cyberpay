@@ -200,7 +200,7 @@ const Signup = () => {
                     <div className={style.check}>
                       <InputCheckBox type="checkbox" name="checkbox" />
 
-                      <label className={style.accept}>
+                       <label className={style.accept}>
                         I accept
                         <span onClick={showModal}>
                            Cyberpay’s Privacy Policy and Terms of Use

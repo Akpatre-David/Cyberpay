@@ -1,0 +1,12 @@
+/* Apply styles to the body when the 404 page is displayed */
+.not-found-page {
+  background-color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  /* Add more styles as needed */
+}
+
+.not-found-content {
+  text-align: center;
+  padding: 20px;
+  /* Add more styles for your content */
+}
