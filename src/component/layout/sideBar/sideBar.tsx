@@ -12,10 +12,9 @@ import { ReactComponent as Mandate } from "../../../assets/mandates.svg";
 import { ReactComponent as Profiles } from "../../../assets/profiles.svg";
 import { ReactComponent as SwitchBiz } from "../../../assets/switchBiz.svg";
 import { ReactComponent as Settings } from "../../../assets/settings.svg";
-import { NavLink } from "react-router-dom";
-import { icons } from "antd/es/image/PreviewGroup";
 import SideBarItem from "../sideBarItem/sideBarItem";
-
+import HelpButton from "../../../customs/helpButton/helpButton";
+import { ReactComponent as Documentation } from "../../../assets/documentation.svg";
 
 const SideBar = () => {
   return (
@@ -35,6 +34,26 @@ const SideBar = () => {
             />
           ))}
         </div>
+        {/* This is the button section for the documentation and FAQ */}
+        <section className={styles.ButtonStyle}>
+          <HelpButton>
+            <span className={styles.docspan}>
+              <Documentation />
+            </span>
+            <span>
+              <p>Documentation</p>
+            </span>
+          </HelpButton>
+          {/* The second button in the sidebar */}
+          <HelpButton>
+            <span className={styles.docspan}>
+              <Documentation />
+            </span>
+            <span className={styles.textSpan}>
+              <p>Help & FAQ</p>
+            </span>
+          </HelpButton>
+        </section>
       </section>
     </aside>
   );

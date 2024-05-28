@@ -1,0 +1,12 @@
+.HelpButton {
+  background: linear-gradient(0deg, #2f8ed6, #2f8ed6),
+    linear-gradient(109.53deg, #2f8ed6 -7.4%, rgba(15, 40, 60, 0.99) 196.02%);
+  border: none;
+  width: 17.6rem;
+  border-radius: 2px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 1rem;
+}

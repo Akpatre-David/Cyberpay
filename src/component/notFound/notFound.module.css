@@ -6,11 +6,6 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-  background: #f3f4f6;
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -18,16 +13,15 @@ body {
   align-items: center;
   height: 100vh;
   text-align: center;
-  background: radial-gradient(circle, #ffffff, #e6e9f0);
-  color: #333;
+  background: radial-gradient(circle, #ffffff, #e6eef7);
+  color: #2c3e50;
   padding: 2rem;
 }
 
 .title {
   font-size: 8rem;
-  margin: 0;
-  color: #ff6b6b;
-  text-shadow: 3px 3px 20px rgba(255, 107, 107, 0.4);
+  color: #2980b9;
+  text-shadow: 3px 3px 20px rgba(41, 128, 185, 0.4);
   animation: bounce 1.5s infinite;
 }
 
@@ -50,14 +44,14 @@ body {
 .message {
   font-size: 2.5rem;
   margin: 1rem 0;
-  color: #333;
+  color: #2c3e50; /* Dark blue-gray */
   font-weight: 700;
 }
 
 .description {
   font-size: 1.2rem;
   margin: 0.5rem 0;
-  color: #666;
+  color: #5d6d7e;
   max-width: 600px;
   line-height: 1.6;
 }
@@ -67,15 +61,15 @@ body {
   padding: 0.75rem 2rem;
   font-size: 1.2rem;
   color: #fff;
-  background-color: #ff6b6b;
+  background-color: #3498db;
   border: none;
   border-radius: 25px;
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4); /* Blue shadow */
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .found:hover {
-  background-color: #ff4757;
+  background-color: #2980b9;
   transform: scale(1.05);
 }
