@@ -18,6 +18,7 @@ import { signupResponse } from "./signuptype";
 import CustomModal from "../../customs/modals/modal";
 import { useState } from "react";
 import ModalBody from "./modal/modalBody";
+ 
 
 interface Payload {
   businessName: string;
@@ -221,6 +222,9 @@ const Signup = () => {
                         Sign In
                       </Link>
                     </div>
+
+                 
+                    
                   </Form>
                 );
               }}

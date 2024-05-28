@@ -1,9 +1,12 @@
-span {
+.sideBarItem {
+  margin-top: 2rem;
+  margin-left: 3.5rem;
+  display: flex;
+  gap: 1.5rem;
   text-decoration: none;
   color: #333333 !important;
-  margin-left: 1rem;
   font-size: 16px;
   font-weight: 600;
-  line-height: 21.86px;
-  text-align: left;
+  width: 111.6rem;
+  overflow-x: hidden;
 }

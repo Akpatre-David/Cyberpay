@@ -16,15 +16,15 @@ import { NavLink } from "react-router-dom";
 import { icons } from "antd/es/image/PreviewGroup";
 import SideBarItem from "../sideBarItem/sideBarItem";
 
+
 const SideBar = () => {
   return (
     <aside>
-      <section>
+      <section className={styles.container}>
+        <div className={styles.log}>
+          <Logo />
+        </div>
 
-        <div><Logo /></div>
-
-
-        
         <div className={styles.sideBar}>
           {items.map((item) => (
             <SideBarItem

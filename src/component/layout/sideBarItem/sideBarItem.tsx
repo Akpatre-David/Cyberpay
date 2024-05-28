@@ -20,6 +20,7 @@ const SideBarItem: React.FC<SideBarItemsProps> = ({ icon, name, link }) => {
               fontWeight: 700,
               fill: "#11643c",
               stroke: "#11643c",
+              borderRadius: "8px",
             }
           : {};
       }}>

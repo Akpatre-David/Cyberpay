@@ -1,0 +1,11 @@
+.container {
+  width: 1016px;
+  height: 150px;
+  gap: 0px;
+  opacity: 0px;
+  background: linear-gradient(
+    118.62deg,
+    #2f8ed6 -18.91%,
+    rgba(15, 40, 60, 0.99) 272.88%
+  );
+}

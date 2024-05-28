@@ -1,6 +1,10 @@
-.sideBar {
-  margin: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.container{
+  padding-top: 2rem;
+}
+
+.log {
+  margin-left: 2rem;
+  width: 50px;
+  height: 30px;
+  margin-bottom: 6rem;
 }
