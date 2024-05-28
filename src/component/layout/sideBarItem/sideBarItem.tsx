@@ -15,9 +15,9 @@ const SideBarItem: React.FC<SideBarItemsProps> = ({ icon, name, link }) => {
       style={({ isActive }) => {
         return isActive
           ? {
-              color: "#11643c",
-              backgroundColor: "#f3f3f3",
-              fontWeight: 600,
+              color: "#2F8ED6",
+              backgroundColor: "#FBFBFB",
+              fontWeight: 700,
               fill: "#11643c",
               stroke: "#11643c",
             }

@@ -1,20 +1,5 @@
-.container {
-  border-right-color: #92a8d1;
-}
-
-.logo {
-  margin: 20px 30px 10px 30px;
-  width: 100px !important;
-}
-
-.title {
-  color: #333333;
-  font-weight: 700;
-  font-size: 16px;
-  margin-left: 1rem;
-}
-
-.sideBarItem {
+.sideBar {
+  margin: 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;

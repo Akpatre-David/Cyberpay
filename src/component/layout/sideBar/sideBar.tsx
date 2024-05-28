@@ -14,13 +14,18 @@ import { ReactComponent as SwitchBiz } from "../../../assets/switchBiz.svg";
 import { ReactComponent as Settings } from "../../../assets/settings.svg";
 import { NavLink } from "react-router-dom";
 import { icons } from "antd/es/image/PreviewGroup";
-import SideBarItem from "./sideBarItem";
+import SideBarItem from "../sideBarItem/sideBarItem";
 
 const SideBar = () => {
   return (
     <aside>
       <section>
-        <div className={styles.sideBarItem}>
+
+        <div><Logo /></div>
+
+
+        
+        <div className={styles.sideBar}>
           {items.map((item) => (
             <SideBarItem
               key={item.id}

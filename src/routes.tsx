@@ -10,7 +10,7 @@ import ActivateAccount from "./component/activateAccount/activateAccount";
 import ActivateSuccess from "./component/activateSuccess/activateSuccess";
 import ModalComponent from "./customs/modals/modal";
 import SideBar from "./component/layout/sideBar/sideBar";
-import NotFound from "./component/Error/error";
+import NotFound from "./component/notFound/notFound";
 
 export const routes = [
   {
