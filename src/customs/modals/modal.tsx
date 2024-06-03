@@ -42,6 +42,7 @@ const CustomModal: FC<ModalProps> = ({
         style={{ padding: 0 }}
         className={styles.modal}
         width="80rem"
+    
         
         footer={null}
       >

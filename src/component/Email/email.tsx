@@ -27,9 +27,10 @@ const email = () => {
               and reset password
             </p>
 
-            <div className={style.button}>
-              
-              <Button type="submit">{"Resend email"}</Button>
+            <div>
+              <Button variant="solid" type="submit">
+                {"Resend email"}
+              </Button>
             </div>
           </div>
         </Card>

@@ -13,8 +13,8 @@ import { ReactComponent as Profiles } from "../../../assets/profiles.svg";
 import { ReactComponent as SwitchBiz } from "../../../assets/switchBiz.svg";
 import { ReactComponent as Settings } from "../../../assets/settings.svg";
 import SideBarItem from "../sideBarItem/sideBarItem";
-import HelpButton from "../../../customs/helpButton/helpButton";
 import { ReactComponent as Documentation } from "../../../assets/documentation.svg";
+import Button from "../../../customs/button/button";
 
 const SideBar = () => {
   return (
@@ -35,24 +35,20 @@ const SideBar = () => {
           ))}
         </div>
         {/* This is the button section for the documentation and FAQ */}
-        <section className={styles.ButtonStyle}>
-          <HelpButton>
-            <span className={styles.docspan}>
+        <section className={styles.buttonStyle}>
+          <Button variant="linear" type="submit">
+            <span className={styles.docs}>
               <Documentation />
             </span>
-            <span>
-              <p>Documentation</p>
-            </span>
-          </HelpButton>
-          {/* The second button in the sidebar */}
-          <HelpButton>
-            <span className={styles.docspan}>
+            <span className={styles.docs}>Documentation</span>
+          </Button>
+
+          <Button variant="linear" type="submit">
+            <span className={styles.docs}>
               <Documentation />
             </span>
-            <span className={styles.textSpan}>
-              <p>Help & FAQ</p>
-            </span>
-          </HelpButton>
+            <span className={styles.docs}>Help & FAQ</span>
+          </Button>
         </section>
       </section>
     </aside>

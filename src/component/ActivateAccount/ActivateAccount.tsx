@@ -42,8 +42,8 @@ const activateAccount = () => {
             </p>
           </div>
 
-          <div className={style.button}>
-            <Button type="submit">{"Resend Link"}</Button>
+          <div>
+            <Button variant="solid" type="submit">{"Resend Link"}</Button>
           </div>
         </Card>
       </section>

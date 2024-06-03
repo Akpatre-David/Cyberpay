@@ -27,26 +27,17 @@
   color: #4a4a4a;
 }
 
-.button {
-  display: flex;
-  justify-content: center;
+
+
+Button {
   margin-bottom: 2rem;
 }
 
-.button > Button {
-  width: 218.62px;
-  height: 54.65px;
-  border-radius: 0.41rem;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 16px;
-  text-align: center;
-}
-
 .signup {
+  padding-top: 2rem;
   font-weight: 400;
   font-size: 14px;
-  margin-bottom: 20rem;
+
   padding-right: 0.5rem;
   color: #4a4a4a;
 }
@@ -83,6 +74,6 @@ Input {
   font-size: 1.2rem;
 }
 
-.spinner{
+.spinner {
   color: white !important;
 }

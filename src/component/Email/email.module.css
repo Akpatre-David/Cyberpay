@@ -40,15 +40,3 @@ div > .text {
   color: #4a4a4a;
   margin-bottom: 5.4rem;
 }
-
-.button {
-  display: flex;
-  justify-content: center;
-}
-
-.button > Button {
-  padding: 1rem 8rem;
-  margin-bottom: 5.8rem;
-  font-weight: 600;
-  font-size: 16px;
-}

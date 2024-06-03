@@ -3,7 +3,7 @@ import style from "./activateSuccess.module.css";
 import { Card } from "../../customs";
 import Button from "../../customs/button/button";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
-import {ReactComponent as ActivationLogo} from "../../assets/ActivationLogo.svg"
+import { ReactComponent as ActivationLogo } from "../../assets/ActivationLogo.svg";
 import { useNavigate } from "react-router-dom";
 
 const ActivateSuccess = () => {
@@ -27,8 +27,11 @@ const ActivateSuccess = () => {
             </p>
           </div>
 
-          <div className={style.button}>
-            <Button onClick={() => navigate("/Log-in")} type="submit">
+          <div>
+            <Button
+              variant="solid"
+              onClick={() => navigate("/Log-in")}
+              type="submit">
               {"Login"}
             </Button>
           </div>

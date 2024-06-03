@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 20px;
+  height: 30rem;
 }
 
 .leftSide {
@@ -13,7 +14,7 @@
   padding-top: 2rem;
   text-align: justify;
   overflow-y: scroll;
-  height: 4 0vh;
+
 }
 
 .rightSide > div:nth-of-type(1) {

@@ -1,43 +1,26 @@
-.ButtonStyle {
+.container {
+  padding-top: 2rem;
+  overflow-x: hidden !important;
+  width: 100%;
+}
+
+/* for the cyberpay Logo */
+.log {
+  margin-top: 2rem;
+  margin-left: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* for the buttonstyle */
+
+.buttonStyle {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   padding: 1rem;
+  margin-left: 1rem;
 }
 
-.helpButton {
-  display: flex;
-  align-items: center;
-  background-color: #3498db; /* Bright blue */
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  padding: 1rem 2rem;
-  text-align: left;
-  text-decoration: none;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4); /* Blue shadow */
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-}
-
-.helpButton:hover {
-  background-color: #2980b9; /* Slightly darker blue on hover */
-  transform: scale(1.05);
-}
-
-.docspan {
-  display: flex;
-  align-items: center;
-  margin-right: 1rem;
-}
-
-.textSpan {
-  display: flex;
-  align-items: center;
-}
-
-.helpButton p {
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: 700;
+/* Optional: to add some space between the items */
+.docs {
+  margin-right: 10px;
 }

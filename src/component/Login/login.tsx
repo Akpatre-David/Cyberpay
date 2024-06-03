@@ -98,15 +98,15 @@ const Login = () => {
                     <div className={style.check}>
                       <InputCheckBox type="checkbox" name="checkbox" />
 
-                      <span>Remeber me</span>
+                      <span>Remember me</span>
 
                       <Link to="/Forgot-Password" className={style.forgotlink}>
                         Forgot your password
                       </Link>
                     </div>
 
-                    <div className={style.button}>
-                      <Button type="submit">
+                    <div>
+                      <Button variant="solid" type="submit">
                         {loginUserMutation.isPending ? <Spin /> : "Sign in"}
                       </Button>
                     </div>
@@ -114,7 +114,7 @@ const Login = () => {
                     <span className={style.signup}>Dont have an account? </span>
 
                     <Link to="/sign-up" className={style.link}>
-                      {"Sign Up"}
+                      "Sign Up"
                     </Link>
 <Spin />
                   </Form>

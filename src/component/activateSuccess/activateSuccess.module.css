@@ -39,20 +39,3 @@
   color: #4a4a4a;
   margin-bottom: 2rem;
 }
-
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.button > Button {
-  text-transform: capitalize;
-  padding: 1rem 8rem;
-  font-weight: 600;
-  font-size: 1.6rem;
-  margin-top: 4rem;
-  margin-bottom: 9rem;
-
-}

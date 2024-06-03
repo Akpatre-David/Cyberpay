@@ -72,8 +72,8 @@ const ForgotPassword = () => {
                       placeholder="Email"
                     />
 
-                    <div className={style.button}>
-                      <Button type="submit">{forgotPasswordMutation.isPending ? <Spin /> : "Send resend Link"}</Button>
+                    <div>
+                      <Button variant="solid" type="submit">{forgotPasswordMutation.isPending ? <Spin /> : "Send resend Link"}</Button>
                     </div>
 
                     <div className={style.last}>

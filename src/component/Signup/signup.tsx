@@ -18,7 +18,6 @@ import { signupResponse } from "./signuptype";
 import CustomModal from "../../customs/modals/modal";
 import { useState } from "react";
 import ModalBody from "./modal/modalBody";
- 
 
 interface Payload {
   businessName: string;
@@ -201,16 +200,16 @@ const Signup = () => {
                     <div className={style.check}>
                       <InputCheckBox type="checkbox" name="checkbox" />
 
-                       <label className={style.accept}>
+                      <label className={style.accept}>
                         I accept
                         <span onClick={showModal}>
-                           Cyberpay’s Privacy Policy and Terms of Use
+                          Cyberpay’s Privacy Policy and Terms of Use
                         </span>
                       </label>
                     </div>
 
-                    <div className={style.button}>
-                      <Button type="submit">
+                    <div>
+                      <Button variant="solid" type="submit">
                         {createAcctMutation.isPending ? <Spin /> : "Sign up"}
                       </Button>
                     </div>
@@ -222,9 +221,6 @@ const Signup = () => {
                         Sign In
                       </Link>
                     </div>
-
-                 
-                    
                   </Form>
                 );
               }}

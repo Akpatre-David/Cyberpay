@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./ResetPassword.module.css";
 import { Card, Input } from "../../customs";
-import { Form, Formik,FormikValues } from "formik";
+import { Form, Formik, FormikValues } from "formik";
 import Button from "../../customs/button/button";
 import { resetPasswordValidation } from "../../Validation/resetPassword";
 import { Link } from "react-router-dom";
@@ -11,45 +11,40 @@ import { useMutation } from "@tanstack/react-query";
 import { notify } from "../../utilis/notify";
 import { Spin } from "antd";
 
-
 interface Payload {
   newPassword: string;
   confirmPassword: string;
 }
 
-
 const baseurl = process.env.REACT_APP_BASE_URL;
 
 const ResetPassword = () => {
+  const userRestPassword = async (payload: Payload) => {
+    return await apiRequest("post", "/Account/Reset-Password", payload);
+  };
 
+  const resetPasswordMutation = useMutation({
+    mutationKey: ["reset-password"],
+    mutationFn: userRestPassword,
+  });
 
-
-    const userRestPassword = async (payload: Payload) => {
-      return await apiRequest("post", "/Account/Reset-Password", payload);
+  const resetPasswordHandler = async (values: FormikValues) => {
+    const payload: Payload = {
+      newPassword: values.newPassword,
+      confirmPassword: values.confirmPassword,
     };
 
-   const resetPasswordMutation = useMutation({
-     mutationKey: ["reset-password"],
-     mutationFn: userRestPassword,
-   });
-  
-   const resetPasswordHandler = async (values: FormikValues) => {
-     const payload: Payload = {
-       newPassword: values.newPassword,
-       confirmPassword: values.confirmPassword,
-     };
-
-     try {
-       await resetPasswordMutation.mutateAsync(payload, {
-         onSuccess(data) {
-            // notify(data?.data?.message || "Password Reset Successful", "success");
-           console.log(data);
-         },
-       });
-     } catch (error: any) {
-       console.log(error);
-     }
-   };
+    try {
+      await resetPasswordMutation.mutateAsync(payload, {
+        onSuccess(data) {
+          // notify(data?.data?.message || "Password Reset Successful", "success");
+          console.log(data);
+        },
+      });
+    } catch (error: any) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -72,7 +67,7 @@ const ResetPassword = () => {
               }}
               validationSchema={resetPasswordValidation}
               onSubmit={(values) => {
-              resetPasswordHandler(values);
+                resetPasswordHandler(values);
               }}>
               {(props) => {
                 return (
@@ -83,7 +78,6 @@ const ResetPassword = () => {
                       name="newPassword"
                       placeholder="New Password"
                       isPasswordInput
-                     
                     />
 
                     <Input
@@ -92,12 +86,10 @@ const ResetPassword = () => {
                       name="confirmPassword"
                       placeholder="Confirm Password"
                       isPasswordInput
-                     
                     />
 
-                    <div className={style.button}>
-
-                      <Button type="submit">
+                    <div>
+                      <Button variant="solid" type="submit">
                         {resetPasswordMutation.isPending ? <Spin /> : "Sign in"}
                       </Button>
                     </div>

@@ -22,6 +22,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   min-width: 100vw;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 code {
@@ -45,4 +46,5 @@ code {
 .ant-modal-body{
     padding: 0 0 !important;
 }
+
 

@@ -1,12 +1,33 @@
-.primary {
+.solid {
   text-align: center;
   background-color: #2f8ed6;
   margin-top: 1rem;
   padding-block: 0.8rem;
   padding-inline: 3rem;
   border: none;
-  border-radius: 4.1px;
   color: #ffffff;
+  border-radius: 0.41rem;
+  font-weight: 600;
+  font-size: 16px;
   width: 360px;
   height: 55px;
+}
+
+.linear {
+  background: linear-gradient(0deg, #2f8ed6, #2f8ed6),
+    linear-gradient(109.53deg, #2f8ed6 -7.4%, rgba(15, 40, 60, 0.99) 196.02%);
+
+  width: 100%;
+  text-align: center;
+  width: 176px;
+  height: 43px;
+  color: white;
+  border: none;
+}
+
+.outline {
+  text-align: center;
+  color: white;
+  border: 1px solid #2e99d6;
+  width: 100px;
 }
