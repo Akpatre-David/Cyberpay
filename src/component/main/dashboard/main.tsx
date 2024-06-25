@@ -63,6 +63,7 @@ const DashBoard = () => {
                         type="text"
                         name="accountName"
                         placeholder="Enter Account Name"
+                        disable
                       />
 
                       <Input
