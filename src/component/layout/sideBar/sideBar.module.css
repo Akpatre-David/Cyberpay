@@ -2,6 +2,10 @@
   padding-top: 2rem;
   overflow-x: hidden !important;
   width: 100%;
+  padding-right: 10rem;
+  @media screen and (max-width: 750px) {
+    display: none;
+  }
 }
 
 /* for the cyberpay Logo */
@@ -23,4 +27,12 @@
 /* Optional: to add some space between the items */
 .docs {
   margin-right: 10px;
+}
+
+.burger {
+  display: none;
+
+  @media screen and (max-width: 750px) {
+    display: flex;
+  }
 }

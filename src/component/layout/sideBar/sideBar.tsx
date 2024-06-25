@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./sideBar.module.css";
 import { ReactComponent as Logo } from "../../../assets/logo.svg";
 import { ReactComponent as DashBoard } from "../../../assets/dashboard.svg";
@@ -15,50 +15,65 @@ import { ReactComponent as Settings } from "../../../assets/settings.svg";
 import SideBarItem from "../sideBarItem/sideBarItem";
 import { ReactComponent as Documentation } from "../../../assets/documentation.svg";
 import Button from "../../../customs/button/button";
+import { ReactComponent as Ham } from "../../../assets/harmBurger.svg";
+import NavBar from "../navBar/navBar";
 
 const SideBar = () => {
+  const [show, setShow] = useState(false);
+
+  const closeMenu = () => {
+    setShow(false);
+  };
+
   return (
-    <aside>
-      <section className={styles.container}>
-        <div className={styles.log}>
-          <Logo />
-        </div>
+    <>
+      <div className={styles.burger}>
+        <Ham onClick={closeMenu} />
+      </div>
+      {show && <NavBar />}
+      <aside>
+        <section className={styles.container}>
+          <div className={styles.log}>
+            <Logo />
+          </div>
 
-        <div className={styles.sideBar}>
-          {items.map((item) => (
-            <SideBarItem
-              key={item.id}
-              name={item.name}
-              icon={item.icon}
-              link={item.link}
-            />
-          ))}
-        </div>
-        {/* This is the button section for the documentation and FAQ */}
-        <section className={styles.buttonStyle}>
-          <Button variant="linear" type="submit">
-            <span className={styles.docs}>
-              <Documentation />
-            </span>
-            <span className={styles.docs}>Documentation</span>
-          </Button>
+          <div className={styles.sideBar}>
+            {items.map((item) => (
+              <SideBarItem
+                key={item.id}
+                name={item.name}
+                icon={item.icon}
+                link={item.link}
+              />
+            ))}
+          </div>
 
-          <Button variant="linear" type="submit">
-            <span className={styles.docs}>
-              <Documentation />
-            </span>
-            <span className={styles.docs}>Help & FAQ</span>
-          </Button>
+          {/* This is the button section for the documentation and FAQ */}
+          <section className={styles.buttonStyle}>
+            <Button variant="linear" type="submit">
+              <span className={styles.docs}>
+                <Documentation />
+              </span>
+              <span className={styles.docs}>Documentation</span>
+            </Button>
+
+            <Button variant="linear" type="submit">
+              <span className={styles.docs}>
+                <Documentation />
+              </span>
+              <span className={styles.docs}>Help & FAQ</span>
+            </Button>
+          </section>
         </section>
-      </section>
-    </aside>
+      </aside>
+    </>
   );
 };
 
 export default SideBar;
 
 const items = [
-  { id: 1, name: "Dashboard", icon: <DashBoard />, link: "/" },
+  { id: 1, name: "Dashboard", icon: <DashBoard />, link: "/dashboard" },
   { id: 2, name: "Transaction", icon: <Transaction />, link: "/" },
   { id: 3, name: "Sub Account", icon: <SubAccount />, link: "/" },
   { id: 4, name: "Digital Wallet", icon: <DigitalWallet />, link: "/" },

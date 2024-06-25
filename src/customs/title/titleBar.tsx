@@ -3,6 +3,7 @@ import styles from "./title.module.css";
 
 interface titleProps extends PropsWithChildren {
   children: ReactNode;
+  className?: string
 }
 
 const TitleBar: FC<titleProps> = ({ children }) => {

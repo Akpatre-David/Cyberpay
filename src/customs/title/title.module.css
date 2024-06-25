@@ -1,8 +1,7 @@
 .container {
-  width: 1016px;
-  height: 150px;
-  gap: 0px;
-  opacity: 0px;
+  padding-block: 2rem;
+  color: #ffffff;
+  margin-inline-end: 10rem;
   background: linear-gradient(
     118.62deg,
     #2f8ed6 -18.91%,

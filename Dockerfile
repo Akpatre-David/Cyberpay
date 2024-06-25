@@ -1,17 +1,11 @@
-FROM node:14-alpine AS build
+FROM node:18-alpine
 
 WORKDIR /app
 
-COPY package.json . 
-
-
-RUN npm install
-
 COPY . .
 
+RUN npm install --production
+
+CMD ["npm", "start"]
+
 EXPOSE 3000
-
-
-CMD [ "npm" "start" ]
-
-

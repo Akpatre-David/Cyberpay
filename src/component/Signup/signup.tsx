@@ -90,7 +90,7 @@ const Signup = () => {
         onSuccess(data) {
           notify(
             data?.data?.message ||
-              "Signin successful. You will be  redirected to the Login Page",
+              "Sign in successful. You will be  redirected to the Login Page",
             "success"
           );
           navigate("/");
@@ -98,10 +98,7 @@ const Signup = () => {
       });
     } catch (error: any) {
       console.log(error);
-      notify(
-        "An error occurred while creating the account. Please try again.",
-        "error"
-      );
+      notify(error.message, "error");
     }
   };
 

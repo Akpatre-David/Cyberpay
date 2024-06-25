@@ -29,7 +29,7 @@ const email = () => {
 
             <div>
               <Button variant="solid" type="submit">
-                {"Resend email"}
+                Resend email
               </Button>
             </div>
           </div>

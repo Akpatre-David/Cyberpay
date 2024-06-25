@@ -8,7 +8,6 @@ interface ModalProps extends PropsWithChildren {
   showModal: () => void;
   handleButtonOk: () => void;
   handleButtonCancel: () => void;
-  
 }
 
 const CustomModal: FC<ModalProps> = ({
@@ -17,7 +16,7 @@ const CustomModal: FC<ModalProps> = ({
   isModalOpen,
   showModal,
   handleButtonCancel,
-  handleButtonOk
+  handleButtonOk,
 }) => {
   const handleShowModal = useCallback(() => {
     showModal();
@@ -38,14 +37,13 @@ const CustomModal: FC<ModalProps> = ({
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
-        styles={{ header: { backgroundColor: "blue", width: "100%", padding:"2rem", } }}
+        styles={{
+          header: { backgroundColor: "blue", width: "100%", padding: "2rem" },
+        }}
         style={{ padding: 0 }}
         className={styles.modal}
         width="80rem"
-    
-        
-        footer={null}
-      >
+        footer={null}>
         {children}
       </Modal>
     </>

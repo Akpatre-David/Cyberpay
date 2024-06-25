@@ -4,11 +4,13 @@ import { Card, Input } from "../../customs";
 import { Form, Formik, FormikValues } from "formik";
 import { forgotPasswordValidation } from "../../Validation/forgotPassword";
 import Button from "../../customs/button/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import apiRequest from "../../utilis/Apicall";
 import { useMutation } from "@tanstack/react-query";
 import { Spin } from "antd";
+import { notify } from "../../utilis/notify";
+import { ForgotResponse } from "./type";
 
 interface Payload {
   email: string;
@@ -17,8 +19,15 @@ interface Payload {
 const baseurl = process.env.REACT_APP_BASE_URL;
 
 const ForgotPassword = () => {
+  const navigate = useNavigate();
+
   const forgotPassword = async (payload: Payload) => {
-    return await apiRequest("post", "/Account/Forgot", payload);
+    const { email } = payload;
+    return await apiRequest<ForgotResponse>(
+      "post",
+      `/Account/Forgot-Password?email=${email}`,
+      payload
+    );
   };
 
   const forgotPasswordMutation = useMutation({
@@ -34,12 +43,13 @@ const ForgotPassword = () => {
     try {
       await forgotPasswordMutation.mutateAsync(payload, {
         onSuccess(data) {
-          console.log(data);
+          notify(data?.data?.message || "Link Sent Successfully", "success");
         },
       });
     } catch (error: any) {
-      console.log(error);
+      notify(error.message, "error");
     }
+    
   };
   return (
     <>
@@ -50,7 +60,7 @@ const ForgotPassword = () => {
       <section className={style.container}>
         <Card>
           <div className={style.header}>
-            <p>reset password</p>
+            <p>Forgot password</p>
             <p>Enter email linked to your account</p>
           </div>
           <div>
@@ -60,7 +70,7 @@ const ForgotPassword = () => {
               }}
               validationSchema={forgotPasswordValidation}
               onSubmit={(values) => {
-              forgotPasswordHandler(values);
+                forgotPasswordHandler(values);
               }}>
               {(props) => {
                 return (
@@ -73,7 +83,13 @@ const ForgotPassword = () => {
                     />
 
                     <div>
-                      <Button variant="solid" type="submit">{forgotPasswordMutation.isPending ? <Spin /> : "Send resend Link"}</Button>
+                      <Button variant="solid" type="submit">
+                        {forgotPasswordMutation.isPending ? (
+                          <Spin />
+                        ) : (
+                          "Send resend Link"
+                        )}
+                      </Button>
                     </div>
 
                     <div className={style.last}>

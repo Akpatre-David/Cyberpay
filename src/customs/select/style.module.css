@@ -1,21 +1,21 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  justify-content: center;
+  margin-top: -1rem;
+
 }
 
 select {
-  padding: 1rem;
+  padding-inline: rem;
   border-radius: 4.1px;
-  width: 30rem;
-  height: 5.6rem;
   font-family: "BRFirma-Medium", sans-serif !important;
   border: 1px solid #dadada;
   margin-bottom: 8px;
 
   @media (min-width: 680px) {
-     width: 30rem;
-  height: 5.6rem;
+    width: 30rem;
+    height: 5.6rem;
   }
 }
 

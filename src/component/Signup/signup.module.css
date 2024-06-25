@@ -4,6 +4,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
   overflow-x: hidden;
+  overflow-y: hidden;
   justify-content: center;
   @media screen and (min-width: 768px) {
     display: flex;

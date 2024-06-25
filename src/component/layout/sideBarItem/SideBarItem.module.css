@@ -1,5 +1,7 @@
 .sideBarItem {
-  padding-bottom: 2rem;
+  align-items: center;
+  /* justify-content: center; */
+  padding: 1rem;
   margin-top: 2rem;
   margin-left: 3.5rem;
   display: flex;
@@ -9,4 +11,9 @@
   font-size: 16px;
   font-weight: 600;
   overflow-x: hidden !important;
+}
+
+
+.sideBarItem:active{
+  color: #2F8ED6;
 }

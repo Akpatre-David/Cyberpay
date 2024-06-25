@@ -5,9 +5,10 @@ interface ButtonProps extends PropsWithChildren {
   type: string;
   onClick?: () => void;
   variant?: string;
+  disabled?: boolean
 }
 
-const Button: FC<ButtonProps> = ({ onClick, children, variant, type }) => {
+const Button: FC<ButtonProps> = ({ onClick, children, variant, type,disabled }) => {
   const variantList = ["linear", "outline", "solid"];
 
   let buttonStyle;

@@ -11,11 +11,12 @@ import ActivateSuccess from "./component/activateSuccess/activateSuccess";
 import ModalComponent from "./customs/modals/modal";
 import SideBar from "./component/layout/sideBar/sideBar";
 import NotFound from "./component/notFound/notFound";
+import DashBoard from "./component/main/dashboard/main";
 
 export const routes = [
   {
     path: "/",
-    element: <Login />
+    element: <Login />,
   },
 
   {
@@ -45,17 +46,21 @@ export const routes = [
 
   {
     path: "sign-up",
-    element: <Signup />,  
+    element: <Signup />,
+  },
+
+  // {
+  //   path: "sideBar",
+  //   element: <SideBar />,
+  // },
+
+  {
+    path: "*",
+    element: <NotFound />,
   },
 
   {
-    path: "sideBar",
-    element: <SideBar/>
-    
+    path: "dashboard",
+    element: <DashBoard />,
   },
-
-  {
-    path: "notfound",
-    element: <NotFound />
-  }
 ];

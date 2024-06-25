@@ -36,19 +36,20 @@ const Login = () => {
 
   const loginUserHandler = async (values: FormikValues) => {
     const payload: Payload = {
-      email: values.email,
-      password: values.password,
+      email: values.email.trim(),
+      password: values.password.trim(),
     };
 
     try {
       await loginUserMutation.mutateAsync(payload, {
         onSuccess(data) {
           notify(data?.data?.message || "Login successful", "success");
-          console.log(data?.data?.message);
+        
         },
       });
     } catch (error: any) {
-      console.log(error);
+      notify(error.message, "error");
+      
     }
   };
 
@@ -74,7 +75,7 @@ const Login = () => {
               }}
               validationSchema={loginValidation}
               onSubmit={(values) => {
-               loginUserHandler(values);
+                loginUserHandler(values);
               }}>
               {(props) => {
                 return (
@@ -92,7 +93,6 @@ const Login = () => {
                       name="password"
                       type="password"
                       isPasswordInput
-                      
                     />
 
                     <div className={style.check}>
@@ -106,7 +106,7 @@ const Login = () => {
                     </div>
 
                     <div>
-                      <Button variant="solid" type="submit">
+                      <Button variant="solid" type="submit" disabled={loginUserMutation.isPending}>
                         {loginUserMutation.isPending ? <Spin /> : "Sign in"}
                       </Button>
                     </div>
@@ -114,9 +114,9 @@ const Login = () => {
                     <span className={style.signup}>Dont have an account? </span>
 
                     <Link to="/sign-up" className={style.link}>
-                      "Sign Up"
+                      Sign Up
                     </Link>
-<Spin />
+                    <Spin />
                   </Form>
                 );
               }}

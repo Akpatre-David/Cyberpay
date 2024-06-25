@@ -30,9 +30,9 @@ const ActivateSuccess = () => {
           <div>
             <Button
               variant="solid"
-              onClick={() => navigate("/Log-in")}
+              onClick={() => navigate("/")}
               type="submit">
-              {"Login"}
+              Login
             </Button>
           </div>
         </Card>
