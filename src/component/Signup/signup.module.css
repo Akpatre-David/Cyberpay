@@ -172,3 +172,12 @@ Button {
 .selectContainer {
   position: relative;
 }
+
+.select {
+  width: 36rem;
+  border-radius: 4.1px;
+  font-family: "BRFirma-Medium", sans-serif !important;
+  border: 1px solid #dadada;
+  margin-bottom: 8px;
+  height: 6rem;
+}

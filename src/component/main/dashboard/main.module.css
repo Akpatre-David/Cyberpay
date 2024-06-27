@@ -21,8 +21,11 @@
 .firstRow {
   padding-top: 5rem;
   display: flex;
-  column-gap: 3rem;
+  column-gap: 6rem;
   align-items: center;
+  @media screen and (max-width: 750px) {
+    flex-direction: column;
+  }
 }
 
 .secondRow {
@@ -30,4 +33,22 @@
   padding-block: 3rem;
   column-gap: 6rem;
   align-items: center;
+  @media screen and (max-width: 750px) {
+    flex-direction: column;
+  }
+}
+
+.selectStyle {
+  width: 36rem;
+  height: 5.5rem;
+}
+
+footer {
+  padding-block: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 6rem;
+  @media screen and (max-width: 750px) {
+    flex-direction: column;
+  }
 }

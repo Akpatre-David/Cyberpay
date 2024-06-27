@@ -11,6 +11,7 @@ interface SelectProps extends React.InputHTMLAttributes<HTMLSelectElement> {
   isLoading?: boolean;
   isError?: boolean;
   error?: string;
+  className?: string;
 }
 
 const Select: React.FC<SelectProps & FieldHookConfig<string> & any> = (
@@ -25,6 +26,7 @@ const Select: React.FC<SelectProps & FieldHookConfig<string> & any> = (
     isLoading,
     isError,
     error,
+    className,
     ...rest
   } = props;
   const [field, meta] = useField(rest);
@@ -33,14 +35,8 @@ const Select: React.FC<SelectProps & FieldHookConfig<string> & any> = (
     <section className={styles.container}>
       <label>{isLoading ? <Spin /> : isError ? error : label}</label>
 
-      <select
-        {...field}
-        className={styles.select}
-        value={field.value}
-        {...rest}>
-        <option value="" defaultValue={""}>
-          {placeholder}
-        </option>
+      <select {...field} value={field.value} {...rest} className={className}>
+        <option value="">{placeholder}</option>
         {children}
       </select>
 

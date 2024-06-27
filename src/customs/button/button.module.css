@@ -1,16 +1,14 @@
 .solid {
   text-align: center;
   background-color: #2f8ed6;
-  margin-top: 1rem;
+
   padding-block: 0.8rem;
   padding-inline: 3rem;
   border: none;
   color: #ffffff;
-  border-radius: 0.41rem;
-  font-weight: 600;
-  font-size: 16px;
-  width: 360px;
-  height: 55px;
+  /* font-weight: 600;
+  font-size: 16px; */
+  border: 1px solid #2e99d6;
 }
 
 .linear {
@@ -19,15 +17,13 @@
 
   width: 100%;
   text-align: center;
-  width: 176px;
-  height: 43px;
   color: white;
   border: none;
+  border: 1px solid #2e99d6;
 }
 
 .outline {
   text-align: center;
-  color: white;
+  color: #2e99d6;
   border: 1px solid #2e99d6;
-  width: 100px;
 }

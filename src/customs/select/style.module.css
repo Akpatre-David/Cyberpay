@@ -3,11 +3,9 @@
   flex-direction: column;
   justify-content: center;
   margin-top: -1rem;
-
 }
 
-select {
-  padding-inline: rem;
+/* select {
   border-radius: 4.1px;
   font-family: "BRFirma-Medium", sans-serif !important;
   border: 1px solid #dadada;
@@ -27,7 +25,7 @@ select:focus {
 select::placeholder {
   color: #8a9ba3 !important;
   font-size: 14px;
-}
+} */
 
 label {
   font-weight: 500;

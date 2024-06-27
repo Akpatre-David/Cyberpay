@@ -5,10 +5,11 @@ interface ButtonProps extends PropsWithChildren {
   type: string;
   onClick?: () => void;
   variant?: string;
-  disabled?: boolean
+  disabled?: boolean;
+  className?: string;
 }
 
-const Button: FC<ButtonProps> = ({ onClick, children, variant, type,disabled }) => {
+const Button: FC<ButtonProps> = ({ onClick, children, variant, type,disabled,className }) => {
   const variantList = ["linear", "outline", "solid"];
 
   let buttonStyle;
@@ -26,7 +27,7 @@ const Button: FC<ButtonProps> = ({ onClick, children, variant, type,disabled }) 
   }
 
   return (
-    <button className={buttonStyle} onClick={onClick}> 
+    <button className={buttonStyle} onClick={onClick}  >
       {children}
     </button>
   );

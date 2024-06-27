@@ -5,9 +5,60 @@ import { Steps } from "antd";
 import styles from "./main.module.css";
 import Header from "../../layout/header/header";
 import { Input, Select } from "../../../customs";
-import { Form, Formik } from "formik";
+import { Form, Formik, FormikValues } from "formik";
+import { Navigate, useNavigate } from "react-router-dom";
+import apiRequest from "../../../utilis/Apicall";
+import { createResponse } from "./type";
+import { useMutation } from "@tanstack/react-query";
+import { notify } from "../../../utilis/notify";
+import Button from "../../../customs/button/button";
+import { accountCreationValidation } from "../../../Validation/accountCreation";
+
+interface Payload {
+  bvn: string;
+  accountName: string;
+  accountNumber: string;
+  bank: string;
+}
+
+const baseurl = process.env.REACT_APP_BASE_URL;
 
 const DashBoard = () => {
+  const Navigate = useNavigate();
+
+  const createAccount = async (payload: Payload) => {
+    return await apiRequest<createResponse>(
+      "post",
+      "CreateAccount/CreateAccount",
+      payload
+    );
+  };
+
+  const accountCreationMutation = useMutation({
+    mutationKey: ["accountCreation"],
+    mutationFn: createAccount,
+  });
+
+  const accountCreationHandler = async (values: FormikValues) => {
+    const payload: Payload = {
+      bvn: values.bvn.trim(),
+      bank: values.bank.trim(),
+      accountName: values.accountName.trim(),
+      accountNumber: values.accountNumber.trim(),
+    };
+
+    try {
+      await accountCreationMutation.mutateAsync(payload, {
+        onSuccess(data) {
+          notify(data?.data?.message || "Login successful", "success");
+          Navigate("/");
+        },
+      });
+    } catch (error: any) {
+      notify(error.message, "error");
+    }
+  };
+
   const { Step } = Steps;
   return (
     <>
@@ -15,7 +66,7 @@ const DashBoard = () => {
         {/* This the sidebar component from the layout */}
         <SideBar />
 
-        <div className={styles.fullwidth}>
+        <div>
           <Header />
 
           {/* this is the titlebar design from custom */}
@@ -34,21 +85,22 @@ const DashBoard = () => {
                 bvn: "",
                 accountNumber: "",
               }}
-              onSubmit={(values) => {}}>
+              validationSchema={accountCreationValidation}
+              onSubmit={(values) => {
+                accountCreationHandler(values);
+              }}>
               {(props) => {
                 return (
                   <Form>
                     <div className={styles.firstRow}>
                       <Select
+                        label="bank"
                         type="text"
-                        label="Bank"
+                        name="bank"
                         placeholder="GT Bank"
-                        name="bank">
-                        <option>
-                          hdhdhdh
-                        </option>
+                        className={styles.selectStyle}>
+                        <option>djfhdhd</option>
                       </Select>
-
                       <Input
                         label="Account Number"
                         type="text"
@@ -73,6 +125,14 @@ const DashBoard = () => {
                         placeholder="Enter BVN"
                       />
                     </div>
+                    <footer>
+                      <Button variant="outline" type="submit">
+                        Back
+                      </Button>
+                      <Button variant="solid" type="submit">
+                        save changes
+                      </Button>
+                    </footer> 
                   </Form>
                 );
               }}
